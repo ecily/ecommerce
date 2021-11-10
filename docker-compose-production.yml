@@ -1,0 +1,31 @@
+version: "3"
+services:
+  react-app:
+    image: react-app-production:${ENV}
+    restart: unless-stopped
+    stdin_open: true
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - default
+    volumes:
+      - caddy-data:/data
+      - caddy-config:/config
+  api-server:
+    image: api-server-production
+    restart: unless-stopped
+    stdin_open: true
+    env_file: ./backend/config/${ENV}.env
+    ports:
+      - "4000:4000"
+    networks:
+      - default
+networks:
+  default:
+    driver: bridge
+volumes:
+  caddy-data:
+    driver: local
+  caddy-config:
+    driver: local
