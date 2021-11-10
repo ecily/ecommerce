@@ -1,10 +1,28 @@
+build-dev:
+	cd frontend && $(MAKE) build-dev
+	cd backend && $(MAKE) build-dev
 
-start-local:
-	cd backend && npm run dev
-	cd frontend && npm start
+run-dev:
+	ENV=dev docker-compose -f docker-compose-dev.yml up
+
+### local
+build-local:
+	cd frontend && $(MAKE) build-local
+	cd backend && $(MAKE) build-local
+
+run-local:
+	ENV=local docker-compose -f docker-compose-production.yml up
+
+### production run on digital ocean
+build-production:
+	cd frontend && $(MAKE) build-production
+	cd backend && $(MAKE) build-production
+
+run-production:
+	ENV=production docker-compose -f docker-compose-production.yml up -d
 
 
-SSH_STRING:=root@165.232.76.14
+SSH_STRING:=root@161.35.28.164
 
 ssh:
 	ssh $(SSH_STRING)

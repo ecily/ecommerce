@@ -2,9 +2,7 @@ const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const dotenv = require("dotenv");
-
-dotenv.config({ path: "config/config.env" });
+require("dotenv").config();
 
 //11.10. versuch mit multer
 const multer = require("multer");
@@ -12,10 +10,6 @@ const multer = require("multer");
 //const fileUpload = require('express-fileupload')
 const path = require("path");
 const errorMiddleware = require("./middlewares/errors");
-
-// Setting up config file
-if (process.env.NODE_ENV !== "PRODUCTION")
-  require("dotenv").config({ path: "config/config.env" });
 
 //11.10. auskommentieren vorher
 app.use(express.json());

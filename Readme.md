@@ -1,10 +1,41 @@
-# to run the app locally
+# to run the app locally in docker container with hot reload
 
-1. Install all dependencies `npm run installDep`
-2. Start app (Backend and Frontend) `npm run start-dev`
+- Install make on your system
+- Install docker on your system
+- open console/shell inside root folder of the source and run `make build-dev`
+- after creating containers run command `make run-dev`
 
-backendserver - npm run prod
+this creates also a Mongo docker image to storing data
 
-frontendserver - cd frontend, npm start
+# run app in digital ocean
 
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCAgYRP7rWUHCmnjK91r/6QQWEdeXbW0IWL8xQLNPqWOU0qlgwrjQO386+UkaFWI9Nz9Q9BrOLrFH5iBg3HBOMo7LuiT5KVnwkoLoeTuCwEEiQbR6ItsjPE5L/UXSFzWnw+m5Y16eVAhylm8/rniqbLZWJC/JrVH70cAv0tBGmJR/QdulIzBD76s3dXGEYOp6mebCnmA7vMag6ZUItqwkroiKSRba8OZhtryniLggkLxAPM4sirMyBOXAHVqh7JkdQ1+jN4RgYxBj50FOlgClTQIXBPqEhstF04DDEcDlC10aPoic1nUab/vSVy931cc2krqLd5PiEj0uwze5aGSmuD rsa-key-20211107
+- Create a digital ocean droplet with a
+  - Marketplace image `Docker 19.03.12 on Ubuntu 20.04`
+  - Enable ssh keys
+- **alternative** Create a Firewall under Networking
+  - Allow Inbound rules for
+    - ssh
+    - HTTP
+    - HTTPS
+- Add Droplet to Firewall
+- Install make on your system
+- open Code in your IDE
+- Change the `SSH_STRING` in the top level **Makefile** to reflect the correct public IP of your droplet in digital ocean
+- change the `domain name` for the app and the `domain owner email` (`tls`) in
+  - frontend/Caddyfile.production
+- change the `BASE_URL` build arg in
+  - frontend/Makefile
+- upload all files to droplet with `make copy-files`
+- connect to droplet `make ssh`
+- install make on droplet `apt install make`
+- create containers `make build-production`
+- serve containers `make run-production`
+
+## for all this it is important that the ssh key for accessing the droplet is available on your system
+
+1. Solution can be to create a ssh key on your system and add this new key at the creation of your new droplet
+2. Solution can be to add your current used ssh key on the authorized_keys on your droplet but this is only possible if you have at least access to the droplet via the online console
+
+# Usefull tutorials
+
+- https://www.youtube.com/watch?v=DftsReyhz2Q
