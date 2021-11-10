@@ -4,9 +4,10 @@
   "description": "an ecily e-commerce showcase",
   "main": "index.js",
   "scripts": {
-    "installDep": "npm install --prefix backend && npm install --prefix frontend",
-    "run-local-backend": "npm start --prefix backend",
-    "run-local-frontend": "npm start --prefix frontend",
+    "installDep": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "local-backend": "npm start --prefix backend",
+    "local-frontend": "npm start --prefix frontend",
+    "start-dev": "concurrently \"npm run local-backend\" \"npm run local-frontend\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
   },
@@ -19,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/ecily/ecommerce/issues"
   },
-  "homepage": "https://github.com/ecily/ecommerce#readme"
+  "homepage": "https://github.com/ecily/ecommerce#readme",
+  "devDependencies": {
+    "concurrently": "^6.3.0"
+  }
 }
