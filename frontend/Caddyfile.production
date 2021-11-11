@@ -1,5 +1,5 @@
-mern.kern.farm:443 {
-    tls kern.harald@gmail.com
+www.christbaum-timmer.at:443 {
+    tls andreas.franz@ecily.com
     root * /srv
     route {
         reverse_proxy /api* api-server:4000
