@@ -11,6 +11,8 @@ services:
     volumes:
       - ./frontend/:/usr/src/app
       - /usr/src/app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=1
   api-server:
     image: api-server
     build: ./backend/
@@ -34,12 +36,6 @@ services:
       - default
     volumes:
       - mongo-data:/data/db
-  mongo-seed:
-    build: ./backend/utils/seeder
-    networks:
-      - default
-    depends_on:
-      - mongo
 networks:
   default:
     driver: bridge
