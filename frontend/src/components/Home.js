@@ -1,49 +1,20 @@
 import React, { Fragment, useEffect, useState } from "react";
-import MetaData from "./layouts/MetaData";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../actions/productActions";
 import Product from "./product/Product";
-import Loader from "./layouts/Loader";
 import { useAlert } from "react-alert";
-import Pagination from "react-js-pagination";
-import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
-const { createSliderWithTooltip } = Slider;
-const Range = createSliderWithTooltip(Slider.Range);
-
 const Home = ({ match }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [price, setPrice] = useState([1, 1000]);
-  const [category, setCategory] = useState("");
-  const [rating, setRating] = useState(0);
-
-  const categories = [
-    "Electronics",
-    "Cameras",
-    "Laptops",
-    "Accessories",
-    "Headphones",
-    "Food",
-    "Books",
-    "Clothes/Shoes",
-    "Beauty/Health",
-    "Sports",
-    "Outdoor",
-    "Home",
-  ];
+  const [currentPage] = useState(1);
+  const [price] = useState([1, 1000]);
+  const [category] = useState("");
+  const [rating] = useState(0);
 
   const alert = useAlert();
   const dispatch = useDispatch();
 
-  const {
-    loading,
-    products,
-    error,
-    productsCount,
-    resPerPage,
-    filteredProductsCount,
-  } = useSelector((state) => state.products);
+  const { products, error } = useSelector((state) => state.products);
 
   const keyword = match.params.keyword;
 
@@ -54,18 +25,9 @@ const Home = ({ match }) => {
     dispatch(getProducts(keyword, currentPage, price, category, rating));
   }, [dispatch, alert, error, keyword, currentPage, price, category, rating]);
 
-  function setCurrentPageNo(pageNumber) {
-    setCurrentPage(pageNumber);
-  }
-
-  let count = productsCount;
-  if (keyword) {
-    count = filteredProductsCount;
-  }
-
   return (
     <Fragment>
-      <a href="#" className="scrollToTop">
+      <a href=" #" className="scrollToTop">
         <i className="icofont-rounded-up"></i>
       </a>
 
@@ -74,16 +36,16 @@ const Home = ({ match }) => {
           className="shape-top-left  d-xxl-block wow fadeInDown"
           data-wow-delay="0.4s"
         >
-          <img src="/images/shape/01.png" />
+          <img src="/images/shape/01.png" alt="" />
         </div>
         <div
           className="shape-bottom-right d-none d-xxl-block wow fadeInUp"
           data-wow-delay="0.4s"
         >
-          <img src="/images/shape/02.png" />
+          <img src="/images/shape/02.png" alt="" />
         </div>
         <div className="shape-bottom wow fadeInUp" data-wow-delay="0.4s">
-          <img src="/images/shape/03.png" />
+          <img src="/images/shape/03.png" alt="" />
         </div>
         <div className="container">
           <div className="row align-items-center position-relative z-index-1">
@@ -277,16 +239,16 @@ const Home = ({ match }) => {
                   data-wow-delay="0.5s"
                 >
                   <div className="social-media">
-                    <a href="#" className="facebook">
+                    <a href=" #" className="facebook">
                       <i className="icofont-facebook"></i>
                     </a>
-                    <a href="#" className="twitter">
+                    <a href=" #" className="twitter">
                       <i className="icofont-twitter"></i>
                     </a>
-                    <a href="#" className="linkedin">
+                    <a href=" #" className="linkedin">
                       <i className="icofont-linkedin"></i>
                     </a>
-                    <a href="#" className="youtube">
+                    <a href=" #" className="youtube">
                       <i className="icofont-youtube-play"></i>
                     </a>
                   </div>
