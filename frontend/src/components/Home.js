@@ -1,14 +1,14 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../actions/productActions";
-import Product from "./product/Product";
-import { useAlert } from "react-alert";
-import "rc-slider/assets/index.css";
+import React, { Fragment, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProducts } from '../actions/productActions';
+import Product from './product/Product';
+import { useAlert } from 'react-alert';
+import 'rc-slider/assets/index.css';
 
 const Home = ({ match }) => {
   const [currentPage] = useState(1);
   const [price] = useState([1, 1000]);
-  const [category] = useState("");
+  const [category] = useState('');
   const [rating] = useState(0);
 
   const alert = useAlert();

@@ -1,19 +1,19 @@
-const User = require("../models/user");
-const ErrorHandler = require("../utils/errorHandler");
-const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
-const sendToken = require("../utils/jwtToken");
-const sendEmail = require("../utils/sendEmail");
-const crypto = require("crypto");
-const cloudinary = require("cloudinary");
+const User = require('../models/user');
+const ErrorHandler = require('../utils/errorHandler');
+const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
+const sendToken = require('../utils/jwtToken');
+const sendEmail = require('../utils/sendEmail');
+const crypto = require('crypto');
+const cloudinary = require('cloudinary');
 
 // Register user => /api/v1/register
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   //console.log('entry point auth controller')
 
   const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
-    folder: "avatars",
+    folder: 'avatars',
     width: 150,
-    crop: "scale",
+    crop: 'scale',
   });
   //console.log('++++++++++++++++++++++authController: ',result)
 
@@ -37,17 +37,16 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   if (!email || !password) {
     return next(
       new ErrorHandler(
-        "Bitte geben Sie Ihre Mailadresse und/oder Ihr Passwort ein.",
+        'Bitte geben Sie Ihre Mailadresse und/oder Ihr Passwort ein.',
         400
       )
     );
   }
-  const user = await User.findOne({ email }).select("+password").exec();
-  console.log(user);
+  const user = await User.findOne({ email }).select('+password').exec();
   if (!user) {
     return next(
       new ErrorHandler(
-        "Hoppala! Falsche Mailadresse oder falsches Passwort.",
+        'Hoppala! Falsche Mailadresse oder falsches Passwort.',
         401
       )
     );
@@ -56,7 +55,7 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   if (!isPasswordMatched) {
     return next(
       new ErrorHandler(
-        "Hoppala! Falsche Mailadresse oder falsches Passwort.",
+        'Hoppala! Falsche Mailadresse oder falsches Passwort.',
         401
       )
     );
@@ -66,13 +65,13 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 
 //change user password => /api/v1/password/update
 exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
-  const user = await User.findById(req.user.id).select("+password");
+  const user = await User.findById(req.user.id).select('+password');
 
   //check previous password
   const isMatched = await user.comparePassword(req.body.oldPassword);
   if (!isMatched) {
     return next(
-      new ErrorHandler("Ihr altes Passwort stimmt leider nicht.", 400)
+      new ErrorHandler('Ihr altes Passwort stimmt leider nicht.', 400)
     );
   }
   user.password = req.body.password;
@@ -88,7 +87,7 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
   };
 
   //update avatar
-  if (req.body.avatar !== "") {
+  if (req.body.avatar !== '') {
     const user = await User.findById(req.user.id);
     const image_id = user.avatar.public_id;
     const res = await cloudinary.v2.uploader.destroy(image_id);
@@ -102,7 +101,7 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
     //     width: 150,
     //     crop: "scale"
     // })
-    const result = "placeholder";
+    const result = 'placeholder';
   }
   // newUserData.avatar = {
   //     public_id: result.public_id,
@@ -123,14 +122,14 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
 exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
-    return next(new ErrorHandler("Benutzer leider nicht gefunden.", 404));
+    return next(new ErrorHandler('Benutzer leider nicht gefunden.', 404));
   }
   // Get reset token
   const resetToken = user.getResetPasswordToken();
   await user.save({ validateBeforeSave: false });
 
   const resetUrl = `${req.protocol}://${req.get(
-    "host"
+    'host'
   )}/password/reset/${resetToken}`;
 
   const message = `Ihr Link zur Passwortänderung ist:\n\n${resetUrl}\n\nSollten Sie keine Passwortänderung beantragt haben, kein Problem - dann bitte einfach ignorieren!`;
@@ -138,7 +137,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   try {
     await sendEmail({
       email: user.email,
-      subject: "Ihre Anfrage zur Passwortänderung.",
+      subject: 'Ihre Anfrage zur Passwortänderung.',
       message,
     });
 
@@ -160,9 +159,9 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
 exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   // Hash URL token
   const resetPasswordToken = crypto
-    .createHash("sha256")
+    .createHash('sha256')
     .update(req.params.token)
-    .digest("hex");
+    .digest('hex');
 
   const user = await User.findOne({
     resetPasswordToken,
@@ -172,7 +171,7 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   if (!user) {
     return next(
       new ErrorHandler(
-        "Der Passworttoken ist leider falsch oder veraltet.",
+        'Der Passworttoken ist leider falsch oder veraltet.',
         400
       )
     );
@@ -180,7 +179,7 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
 
   if (req.body.password !== req.body.confirmPassword) {
     return next(
-      new ErrorHandler("Die Passwörter stimmen leider nicht überein.", 400)
+      new ErrorHandler('Die Passwörter stimmen leider nicht überein.', 400)
     );
   }
 
@@ -196,6 +195,11 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
 
 //get current user details => /api/v1/me
 exports.getUserProfile = catchAsyncErrors(async (req, res, next) => {
+  if (req.user?.id) {
+    res.status(401).json({
+      success: false,
+    });
+  }
   const user = await User.findById(req.user.id);
 
   res.status(200).json({
@@ -206,13 +210,13 @@ exports.getUserProfile = catchAsyncErrors(async (req, res, next) => {
 
 //logout user => /api/v1/logout
 exports.logout = catchAsyncErrors(async (req, res, next) => {
-  res.cookie("token", null, {
+  res.cookie('token', null, {
     expires: new Date(Date.now()),
     httpOnly: true,
   });
   res.status(200).json({
     success: true,
-    message: "Erfolgreich ausgeloggt. Auf Wiedersehen!",
+    message: 'Erfolgreich ausgeloggt. Auf Wiedersehen!',
   });
 });
 
