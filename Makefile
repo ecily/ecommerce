@@ -1,3 +1,10 @@
+start-backend:
+	cd backend && npm install && ${MAKE} run-start
+
+start-frontend:
+	cd frontend && npm install && ${MAKE} run-start
+
+
 build-dev:
 	cd frontend && $(MAKE) build-dev
 	cd backend && $(MAKE) build-dev

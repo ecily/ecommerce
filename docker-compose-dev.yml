@@ -1,11 +1,11 @@
-version: "3"
+version: '3'
 services:
   react-app:
     image: react-app
     build: ./frontend/
     stdin_open: true
     ports:
-      - "3000:3000"
+      - '3000:3000'
     networks:
       - default
     volumes:
@@ -19,26 +19,14 @@ services:
     stdin_open: true
     env_file: ./backend/config/${ENV}.env
     ports:
-      - "4000:4000"
+      - '4000:4000'
     networks:
       - default
-    depends_on:
-      - mongo
     volumes:
       - ./backend/:/usr/src/app
       - /usr/src/app/node_modules
-  mongo:
-    image: mongo:4.4-bionic
-    restart: "always"
-    ports:
-      - "27017:27017"
-    networks:
-      - default
-    volumes:
-      - mongo-data:/data/db
+    environment:
+      - CHOKIDAR_USEPOLLING=1
 networks:
   default:
     driver: bridge
-volumes:
-  mongo-data:
-    driver: local

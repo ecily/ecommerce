@@ -1,3 +1,6 @@
+run-start: 
+	npm run start
+
 build-dev:
 	docker build -t react-app .
 
