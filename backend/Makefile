@@ -1,3 +1,7 @@
+run-start:
+	npm run dev
+
+
 build-dev:
 	docker build -t api-server .
 

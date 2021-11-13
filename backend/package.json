@@ -4,8 +4,8 @@
   "description": "an ecily e-commerce showcase",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon server",
+    "start": "node -r dotenv/config . dotenv_config_path=./config/dev.env server.js",
+    "dev": "nodemon -r dotenv/config . dotenv_config_path=./config/dev.env server",
     "prod": "SET NODE_ENV=PRODUCTION& nodemon server",
     "seeder": "node utils/seeder.js"
   },
