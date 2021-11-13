@@ -28,13 +28,13 @@ body {
 }
 
 nav {
-  background-color: transparent;
+  
   padding: 1rem 1rem;
+  width: 100%;
+  background: #ac101a;
 }
 
-#search_btn {
-  background-color: #febd69;
-}
+
 
 .input-group {
   width: 90%;
@@ -56,6 +56,7 @@ nav {
 #cart {
   font-size: 1.4rem;
   color: #14cc3c;
+  
 }
 
 #cart_count {
@@ -388,7 +389,7 @@ footer {
 }
 
 .active-step {
-  background: #fa9c23;
+  background: #ac101e;
   color: #fff;
 }
 
@@ -396,7 +397,7 @@ footer {
   float: left;
   width: 0;
   border-top: 20px solid transparent;
-  border-left: 15px solid #fa9c23;
+  border-left: 15px solid #ac101e;
   border-bottom: 20px solid transparent;
   margin-left: -1px;
 }
@@ -404,9 +405,9 @@ footer {
 .triangle2-active {
   width: 0;
   float: left;
-  border-top: 20px solid #fa9c23;
+  border-top: 20px solid #ac101e;
   border-left: 15px solid #fff;
-  border-bottom: 20px solid #fa9c23;
+  border-bottom: 20px solid #ac101e;
   margin-right: -1px;
 }
 

@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap"
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../actions/productActions";
 import Product from "./product/Product";
@@ -32,14 +33,17 @@ const Home = ({ match }) => {
 
   
   return (
+    
     <Fragment>
-      <MetaData title={'christbaum-timmer.at'} />
+ 
+    <MetaData title={"christbaum-timmer.at"} />
+  
       <a href=" #" className="scrollToTop">
         <i className="icofont-rounded-up"></i>
       </a>
 
       <div className="bg-theme position-relative">
-        <div
+      <div
           className="shape-top-left  d-xxl-block wow fadeInDown"
           data-wow-delay="0.4s"
         >
@@ -61,8 +65,8 @@ const Home = ({ match }) => {
               data-wow-delay="0.4s"
             >
               <div className="banner-content">
-                <span className="banner-sub-title text-white">
-                  christbaum-timmer.at
+              <span className="banner-sub-title text-white">
+                  Christbaum-Timmer wünscht
                 </span>
                 <h2 className="banner-title">Frohe Weihnachten!</h2>
                 <p className="banner-desc text-white">
@@ -96,7 +100,7 @@ const Home = ({ match }) => {
 
       {/* <!-- ==========Pricing Section Starts Here========== --> */}
       <div
-        className="pricing-section padding-top padding-bottom position-relative"
+        className="pricing-section pt-5 position-relative"
         id="pricing"
       >
         <div className="container">
@@ -105,7 +109,7 @@ const Home = ({ match }) => {
             data-wow-delay="0.4s"
           >
             <span className="section-subtitle theme-color">
-              Bestellen Sie unsere Christbäume bis 20. Dezember bequem über das Internet und bekommen Sie rechtzeitig zum Fest geliefert.
+              bis zum 20. Dezember bequem online bestellen und rechtzeitig vor dem Fest geliefert bekommen
             </span>
             
           </div>
@@ -113,10 +117,19 @@ const Home = ({ match }) => {
             {/* <!-- Nordmanntanne hier --> */}
             <div className="col-12">
               <div className="section-wrapper text-center">
-                <div>
-                  <img src="/images/pricing/tree.png" alt="ChampEvent" />
+                <div style={{marginBottom: "2rem"}}>
+                  <img src="/images/pricing/tree.jpg" alt="christmas tree" />
                 </div>
               </div>
+            </div>
+            <div
+            className="section-header text-center wow fadeInUp"
+            data-wow-delay="0.4s"
+          >
+
+            <span className="section-subtitle theme-color">
+              wählen Sie einfach die gewünschte Größe
+            </span>
             </div>
 
             <div className="row justify-content-center justify-content-center g-4">
@@ -131,7 +144,7 @@ const Home = ({ match }) => {
 
       {/* <!-- ==========About Section Starts Here========== --> */}
       <div
-        className="about-section padding-top padding-bottom position-relative"
+        className="about-section padding-top position-relative"
         id="about"
       >
         {/* <div className="shape-bottom-right d-none d-xxl-block wow fadeInUp" data-wow-delay="0.8s">
@@ -157,35 +170,26 @@ const Home = ({ match }) => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/about/01.jpg?text=First slide&bg=f5f5f5"
+      src="/images/Timm_1.jpg?text=First slide&bg=f5f5f5"
       alt="First slide"
     />
-    <Carousel.Caption>
-      <h5>First slide label</h5>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
+    
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/about/01.jpg?text=Second slide&bg=eee"
+      src="/images/Timm_3.jpg?text=Second slide&bg=eee"
       alt="Second slide"
     />
-    <Carousel.Caption>
-      <h5>Second slide label</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
+   
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/about/01.jpg?text=Third slide&bg=e5e5e5"
+      src="/images/Timm_2.jpg?text=Third slide&bg=e5e5e5"
       alt="Third slide"
     />
-    <Carousel.Caption>
-      <h5>Third slide label</h5>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </Carousel.Caption>
+   
   </Carousel.Item>
 </Carousel>
 
@@ -267,17 +271,15 @@ const Home = ({ match }) => {
                   </p>
                   <p className="mb-0 text-white">Kontaktadresse</p>
                 </div>
+                <Link to="/login">Admin</Link>
 
-                <div
-                  className="footer-social wow fadeInUp"
-                  data-wow-delay="0.5s"
-                >
+                
                 
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        
       </footer>
       {/* <!-- ==========Newsletter Section Ends Here========== --> */}
     </Fragment>

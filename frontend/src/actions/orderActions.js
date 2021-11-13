@@ -70,9 +70,9 @@ export const getOrderDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
 
-    console.log("ID", id);
+    // console.log("ID", id);
     const { data } = await api.get(`/api/v1/order/${id}`);
-    console.log("Data", data);
+    // console.log("Data", data);
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
       payload: data.order,

@@ -43,7 +43,7 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
     );
   }
   const user = await User.findOne({ email }).select("+password").exec();
-  console.log(user);
+  // console.log(user);
   if (!user) {
     return next(
       new ErrorHandler(

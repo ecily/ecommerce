@@ -118,9 +118,9 @@ const Payment = ({ history }) => {
       <div className="row wrapper">
         <div className="col-10 col-lg-5">
           <form className="shadow-lg" onSubmit={submitHandler}>
-            <h1 className="mb-4">Kartendaten</h1>
+            <h2 className="mb-4">Kartendaten</h2>
             <div className="form-group">
-              <label htmlFor="card_num_field">Nummer auf der Kreditkarte</label>
+              <label htmlFor="card_num_field">Kartennummer</label>
               <CardNumberElement
                 type="text"
                 id="card_num_field"
@@ -149,8 +149,8 @@ const Payment = ({ history }) => {
               />
             </div>
 
-            <button id="pay_btn" type="submit" className="btn btn-block py-3">
-              Jetzt bezahlen {`- ${orderInfo && orderInfo.totalPrice}`}
+            <button id="pay_btn" type="submit" className="lab-btn btn-block py-3" style={{ color: "white" }}>
+              Jetzt bezahlen {`- EUR ${orderInfo && orderInfo.totalPrice}`}
             </button>
           </form>
         </div>

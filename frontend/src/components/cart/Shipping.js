@@ -19,12 +19,18 @@ const Shipping = ({ history }) => {
     const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo)
     const [country, setCountry] = useState(shippingInfo.country)
 
+    // 13.11 Erweiterung der Shipping info weil keine Login mehr abgefragt wird
+    const [name, setName] = useState(shippingInfo.name)
+    const [email, setEmail] = useState(shippingInfo.email)
+
+    //Ende 13.11
+
     const dispatch = useDispatch();
 
     const submitHandler = (e) => {
         e.preventDefault()
 
-        dispatch(saveShippingInfo({ address, city, phoneNo, postalCode, country }))
+        dispatch(saveShippingInfo({ address, city, phoneNo, postalCode, country, name, email }))
         history.push('/confirm')
     }
 
@@ -38,7 +44,31 @@ const Shipping = ({ history }) => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler}>
-                        <h1 className="mb-4">Versandinformation</h1>
+                        <h2 className="mb-4">Versand</h2>
+                        {/* 13.11 Erweiterung der Shipping Info */}
+                        <div className="form-group">
+                            <label htmlFor="name_field">Vor- und Familienname</label>
+                            <input
+                                type="text"
+                                id="name_field"
+                                className="form-control"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="address_field">Email</label>
+                            <input
+                                type="email"
+                                id="email_field"
+                                className="form-control"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
+                        {/* 13. 11. Ende */}
                         <div className="form-group">
                             <label htmlFor="address_field">Adresse</label>
                             <input
@@ -109,9 +139,9 @@ const Shipping = ({ history }) => {
                         <button
                             id="shipping_btn"
                             type="submit"
-                            className="btn btn-block py-3"
+                            className="lab-btn btn-block py-3"
                         >
-                            Weiter
+                            <span>Weiter</span>
                             </button>
                     </form>
                 </div>

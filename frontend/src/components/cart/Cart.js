@@ -47,6 +47,8 @@ const Cart = ({ history }) => {
           
             : (
                 <Fragment>
+                    <div>
+
                     <h2 className="mt-5">Ihr Warenkorb: <b>{cartItems.length} Produkte</b></h2>
 
                     <div className="row d-flex justify-content-between">
@@ -101,9 +103,12 @@ const Cart = ({ history }) => {
                                 <p>Gesamt: <span className="order-summary-values">€ {cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)}</span></p>
 
                                 <hr />
-                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Weiter</button>
+                                <Link to="/Shipping"  className="lab-btn btn btn-block" ><span>Weiter</span></Link>
+                              
+                            
                             </div>
                         </div>
+                    </div>
                     </div>
                 </Fragment>
             )}

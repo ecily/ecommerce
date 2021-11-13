@@ -13,5 +13,7 @@
     "url": "https://github.com/ecily/ecommerce/issues"
   },
   "homepage": "https://github.com/ecily/ecommerce#readme",
-  "dependencies": {}
+  "dependencies": {
+    "react-snowfall": "^1.1.0"
+  }
 }
