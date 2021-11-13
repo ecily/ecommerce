@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import MetaData from '../layouts/MetaData'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItemToCart, removeItemFromCart } from '../../actions/cartActions'
+import EmptyCart from './EmptyCart'
+
 
 const Cart = ({ history }) => {
 
@@ -39,7 +41,11 @@ const Cart = ({ history }) => {
     return (
         <Fragment>
             <MetaData title={'Ihr Warenkorb'} />
-            {cartItems.length === 0 ? <h2 className="mt-5">Ihr Warenkorb ist leer. Füllen Sie ihn doch! :)</h2> : (
+
+            {cartItems.length === 0 ? 
+            <EmptyCart/>
+          
+            : (
                 <Fragment>
                     <h2 className="mt-5">Ihr Warenkorb: <b>{cartItems.length} Produkte</b></h2>
 

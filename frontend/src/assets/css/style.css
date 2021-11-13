@@ -631,6 +631,7 @@ body h6 {
 }
 
 .banner-content .banner-title {
+  
   font-weight: 400;
 }
 
@@ -1446,7 +1447,7 @@ ul li {
 
 /*================*** Header Section Start Here     ***===================*/
 header.header-fixed .header-one {
-  background: #ac101e;
+  background: transparent;
   box-shadow: 0 0 10px rgba(24, 24, 24, 0.1);
  
 }
@@ -1474,7 +1475,7 @@ header .header-one {
 }
 @media (max-width: 991px) {
   header .header-one {
-    background: #ac101e;
+    background: transparent;
   }
 }
 header .header-one.header-fixed {
@@ -1487,7 +1488,7 @@ header .header-one.header-fixed {
   }
 }
 header .header-one.header-style-two.header-bg-white {
-  background-color: #fff;
+  background-color: transparent;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 992px) {
@@ -2164,7 +2165,7 @@ header .header-bar.show span:last-child {
 }
 .pricing-item .pricing-inner {
   box-shadow: 0 0 10px rgba(136, 136, 136, 0.1);
-  padding: 40px 30px;
+  padding: 40px 100px;
   background: #fff;
   -webkit-transition: 0.3s all linear;
   -moz-transition: 0.3s all linear;
