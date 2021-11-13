@@ -1,9 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap"
-<<<<<<< HEAD
 import { Link } from 'react-router-dom'
-=======
->>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../actions/productActions";
 import Product from "./product/Product";
@@ -38,13 +35,9 @@ const Home = ({ match }) => {
   return (
     
     <Fragment>
-<<<<<<< HEAD
  
     <MetaData title={"christbaum-timmer.at"} />
   
-=======
-      <MetaData title={'christbaum-timmer.at'} />
->>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
       <a href=" #" className="scrollToTop">
         <i className="icofont-rounded-up"></i>
       </a>
@@ -72,13 +65,8 @@ const Home = ({ match }) => {
               data-wow-delay="0.4s"
             >
               <div className="banner-content">
-<<<<<<< HEAD
               <span className="banner-sub-title text-white">
                   Christbaum-Timmer wünscht
-=======
-                <span className="banner-sub-title text-white">
-                  christbaum-timmer.at
->>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
                 </span>
                 <h2 className="banner-title">Frohe Weihnachten!</h2>
                 <p className="banner-desc text-white">
@@ -121,11 +109,7 @@ const Home = ({ match }) => {
             data-wow-delay="0.4s"
           >
             <span className="section-subtitle theme-color">
-<<<<<<< HEAD
               bis zum 20. Dezember bequem online bestellen und rechtzeitig vor dem Fest geliefert bekommen
-=======
-              Bestellen Sie unsere Christbäume bis 20. Dezember bequem über das Internet und bekommen Sie rechtzeitig zum Fest geliefert.
->>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
             </span>
             
           </div>
@@ -133,13 +117,8 @@ const Home = ({ match }) => {
             {/* <!-- Nordmanntanne hier --> */}
             <div className="col-12">
               <div className="section-wrapper text-center">
-<<<<<<< HEAD
                 <div style={{marginBottom: "2rem"}}>
                   <img src="/images/pricing/tree.jpg" alt="christmas tree" />
-=======
-                <div>
-                  <img src="/images/pricing/tree.png" alt="ChampEvent" />
->>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
                 </div>
               </div>
             </div>
@@ -148,14 +127,11 @@ const Home = ({ match }) => {
             data-wow-delay="0.4s"
           >
 
-<<<<<<< HEAD
             <span className="section-subtitle theme-color">
               wählen Sie einfach die gewünschte Größe
             </span>
             </div>
 
-=======
->>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
             <div className="row justify-content-center justify-content-center g-4">
               {products &&
                 products.map((product) => (
@@ -194,56 +170,26 @@ const Home = ({ match }) => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-<<<<<<< HEAD
       src="/images/Timm_1.jpg?text=First slide&bg=f5f5f5"
       alt="First slide"
     />
     
-=======
-      src="/images/about/01.jpg?text=First slide&bg=f5f5f5"
-      alt="First slide"
-    />
-    <Carousel.Caption>
-      <h5>First slide label</h5>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
->>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-<<<<<<< HEAD
       src="/images/Timm_3.jpg?text=Second slide&bg=eee"
       alt="Second slide"
     />
    
-=======
-      src="/images/about/01.jpg?text=Second slide&bg=eee"
-      alt="Second slide"
-    />
-    <Carousel.Caption>
-      <h5>Second slide label</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
->>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-<<<<<<< HEAD
       src="/images/Timm_2.jpg?text=Third slide&bg=e5e5e5"
       alt="Third slide"
     />
    
-=======
-      src="/images/about/01.jpg?text=Third slide&bg=e5e5e5"
-      alt="Third slide"
-    />
-    <Carousel.Caption>
-      <h5>Third slide label</h5>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </Carousel.Caption>
->>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
   </Carousel.Item>
 </Carousel>
 
@@ -327,14 +273,7 @@ const Home = ({ match }) => {
                 </div>
                 <Link to="/login">Admin</Link>
 
-<<<<<<< HEAD
                 
-=======
-                <div
-                  className="footer-social wow fadeInUp"
-                  data-wow-delay="0.5s"
-                >
->>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
                 
                 </div>
               </div>

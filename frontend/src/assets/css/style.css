@@ -2165,11 +2165,7 @@ header .header-bar.show span:last-child {
 }
 .pricing-item .pricing-inner {
   box-shadow: 0 0 10px rgba(136, 136, 136, 0.1);
-<<<<<<< HEAD
   padding: 5px 80px;
-=======
-  padding: 40px 100px;
->>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
   background: #fff;
   -webkit-transition: 0.3s all linear;
   -moz-transition: 0.3s all linear;
