@@ -28,7 +28,11 @@ body {
 }
 
 nav {
+<<<<<<< HEAD
   
+=======
+  background-color: transparent;
+>>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
   padding: 1rem 1rem;
   width: 100%;
   background: #ac101a;
@@ -56,7 +60,10 @@ nav {
 #cart {
   font-size: 1.4rem;
   color: #14cc3c;
+<<<<<<< HEAD
   
+=======
+>>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
 }
 
 #cart_count {

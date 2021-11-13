@@ -19,7 +19,11 @@ const Product = ({ product, col }) => {
                        
                         <h3 className="pricing-price" style={{ fontSize: "1rem" }} >{product.description}</h3>
                         <h3 className="pricing-price" style={{ fontSize: "1rem" }}>EUR {product.price}</h3>
+<<<<<<< HEAD
                         {/* <Link to={`/product/${product._id}`}  className="lab-btn" style={{ color: "#14cc3c" }}>Details</Link> */}
+=======
+                        <Link to={`/product/${product._id}`}  className="lab-btn" style={{ color: "#14cc3c" }}>Details</Link>
+>>>>>>> c37facf90dd6a6149d481fc98ae856c7f74d0ecd
                     </div>
                 
         </div>
