@@ -61,10 +61,10 @@ function App() {
           <Route path="/search/:keyword" component={Home} />
           <Route path="/product/:id" component={ProductDetails} exact />
           <Route path="/cart" component={Cart} exact />
-          <Route path="/shipping" component={Shipping} />
-          <Route path="/confirm" component={ConfirmOrder} exact />
-          <Route path="/order/:id" component={OrderDetails} exact />
-          <Route path="/success" component={OrderSuccess} />
+          <ProtectedRoute path="/shipping" component={Shipping} />
+          <ProtectedRoute path="/confirm" component={ConfirmOrder} exact />
+          <ProtectedRoute path="/order/:id" component={OrderDetails} exact />
+          <ProtectedRoute path="/success" component={OrderSuccess} />
           {stripeApiKey && (
             <Elements stripe={loadStripe(stripeApiKey)}>
               <ProtectedRoute path="/payment" component={Payment} />
@@ -74,9 +74,9 @@ function App() {
           <Route path="/register" component={Register} />
           <Route path="/password/forgot" component={ForgotPassword} exact />
           <Route path="/password/reset/:token" component={NewPassword} exact />
-          <Route path="/me" component={Profile} exact />
-          <Route path="/me/update" component={UpdateProfile} exact />
-          <Route
+          <ProtectedRoute path="/me" component={Profile} exact />
+          <ProtectedRoute path="/me/update" component={UpdateProfile} exact />
+          <ProtectedRoute
             path="/password/update"
             component={UpdatePassword}
             exact

@@ -4,16 +4,16 @@
 */
 
 // Amount of Snowflakes
-var snowMax = 135;
+var snowMax = 100;
 
 // Snowflake Colours
-var snowColor = ["#DDD", "#EEE"];
+var snowColor = ["#F5EEF8 ", "#2874A6", "AED6F1"];
 
 // Snow Entity
 var snowEntity = "&#x2022;";
 
 // Falling Velocity
-var snowSpeed = 0.75;
+var snowSpeed = 1.00;
 
 // Minimum Flake Size
 var snowMinSize = 8;

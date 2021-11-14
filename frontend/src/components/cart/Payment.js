@@ -35,7 +35,7 @@ const Payment = ({ history }) => {
   const elements = useElements();
   const dispatch = useDispatch();
 
-  const { user } = useSelector((state) => state.auth);
+  // const { user } = useSelector((state) => state.auth);
   const { cartItems, shippingInfo } = useSelector((state) => state.cart);
   const { error } = useSelector((state) => state.newOrder);
 
@@ -84,8 +84,8 @@ const Payment = ({ history }) => {
         payment_method: {
           card: elements.getElement(CardNumberElement),
           billing_details: {
-            name: user.name,
-            email: user.email,
+            name: shippingInfo.name,
+            email: shippingInfo.email,
           },
         },
       });

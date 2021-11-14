@@ -94,12 +94,12 @@ export const allOrders = () => async (dispatch) => {
 
     dispatch({
       type: ALL_ORDERS_SUCCESS,
-      payload: data,
+      payload: data
     });
   } catch (error) {
     dispatch({
       type: ALL_ORDERS_FAIL,
-      payload: error.response?.data.message,
+      payload: error.response.data.message
     });
   }
 };
