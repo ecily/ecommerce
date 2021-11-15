@@ -8,7 +8,7 @@ const {
 
 const { isAuthenticatedUser } = require('../middlewares/auth');
 
-router.route('/payment/process').post(isAuthenticatedUser, processPayment);
+router.route('/payment/process').post(processPayment);
 router.route('/stripeapi').get(sendStripeApi);
 
-module.exports = router;
+module.exports = router

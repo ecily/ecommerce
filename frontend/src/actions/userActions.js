@@ -77,7 +77,7 @@ export const register = (userData) => async (dispatch) => {
       },
     };
 
-    console.log(userData);
+    // console.log(userData);
     const { data } = await api.post("/api/v1/register", userData, config);
 
     dispatch({

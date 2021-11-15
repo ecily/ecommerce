@@ -1,9 +1,13 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProducts } from '../actions/productActions';
-import Product from './product/Product';
-import { useAlert } from 'react-alert';
-import 'rc-slider/assets/index.css';
+import React, { Fragment, useEffect, useState } from "react";
+import { Carousel } from "react-bootstrap"
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../actions/productActions";
+import Product from "./product/Product";
+import { useAlert } from "react-alert";
+import "rc-slider/assets/index.css";
+import MetaData from './layouts/MetaData'
+
 
 const Home = ({ match }) => {
   const [currentPage] = useState(1);
@@ -24,15 +28,22 @@ const Home = ({ match }) => {
     }
     dispatch(getProducts(keyword, currentPage, price, category, rating));
   }, [dispatch, alert, error, keyword, currentPage, price, category, rating]);
+  
 
+
+  
   return (
+    
     <Fragment>
+ 
+    <MetaData title={"christbaum-timmer.at"} />
+  
       <a href=" #" className="scrollToTop">
         <i className="icofont-rounded-up"></i>
       </a>
 
       <div className="bg-theme position-relative">
-        <div
+      <div
           className="shape-top-left  d-xxl-block wow fadeInDown"
           data-wow-delay="0.4s"
         >
@@ -54,8 +65,8 @@ const Home = ({ match }) => {
               data-wow-delay="0.4s"
             >
               <div className="banner-content">
-                <span className="banner-sub-title text-white">
-                  Timmer's Nordmann-Tannen
+              <span className="banner-sub-title text-white">
+                  Christbaum-Timmer wünscht
                 </span>
                 <h2 className="banner-title">Frohe Weihnachten!</h2>
                 <p className="banner-desc text-white">
@@ -67,7 +78,7 @@ const Home = ({ match }) => {
                   Weihnachtsbaum.
                 </p>
                 <div className="banner-button-group d-inline-flex">
-                  <a href="#pricing" className="lab-btn">
+                  <a href="#pricing" className="lab-btn mb-5">
                     <span>Jetzt einkaufen!</span>
                   </a>
                 </div>
@@ -89,40 +100,39 @@ const Home = ({ match }) => {
 
       {/* <!-- ==========Pricing Section Starts Here========== --> */}
       <div
-        className="pricing-section padding-top padding-bottom position-relative"
+        className="pricing-section pt-5 position-relative"
         id="pricing"
       >
-        <div
-          className="shape-top-right d-xl-block wow fadeInDown"
-          data-wow-delay="0.4s"
-        >
-          <img src="/images/shape/09.png" alt="ChampEvent" />
-        </div>
-        <div className="shape-bottom wow fadeInUp" data-wow-delay="0.8s">
-          <img src="/images/shape/08.png" alt="ChampEvent" />
-        </div>
         <div className="container">
           <div
             className="section-header text-center wow fadeInUp"
             data-wow-delay="0.4s"
           >
             <span className="section-subtitle theme-color">
-              bis 20. Dezember bestellen und rechtzeitig zum Fest geliefert
-              bekommen
+              bis zum 20. Dezember bequem online bestellen und rechtzeitig vor dem Fest geliefert bekommen
             </span>
-            <h2 className="section-title">unsere Nordmann-Tannen</h2>
+            
           </div>
           <div className="section-wrapper">
             {/* <!-- Nordmanntanne hier --> */}
             <div className="col-12">
               <div className="section-wrapper text-center">
-                <div className="footer-logo wow fadeInUp" data-wow-delay="0.4s">
-                  <img src="/images/pricing/tree.png" alt="ChampEvent" />
+                <div style={{marginBottom: "2rem"}}>
+                  <img src="/images/pricing/tree.jpg" alt="christmas tree" />
                 </div>
               </div>
             </div>
+            <div
+            className="section-header text-center wow fadeInUp"
+            data-wow-delay="0.4s"
+          >
 
-            <div className="row justify-content-center align-items-center g-4">
+            <span className="section-subtitle theme-color">
+              wählen Sie einfach die gewünschte Größe
+            </span>
+            </div>
+
+            <div className="row justify-content-center justify-content-center g-4">
               {products &&
                 products.map((product) => (
                   <Product key={product._id} product={product} col={3} />
@@ -134,20 +144,21 @@ const Home = ({ match }) => {
 
       {/* <!-- ==========About Section Starts Here========== --> */}
       <div
-        className="about-section padding-top padding-bottom position-relative"
+        className="about-section padding-top position-relative"
         id="about"
       >
         {/* <div className="shape-bottom-right d-none d-xxl-block wow fadeInUp" data-wow-delay="0.8s">
 			
             <img src="/images/shape/02.png" alt="ChampEvent"/>
 		</div> */}
-
+{/* 
         <div
           className="shape-bottom-right d-xxl-block wow fadeInUp"
           data-wow-delay="0.8s"
         >
+
           <img src="/images/shape/05.png" alt="ChampEvent" />
-        </div>
+        </div> */}
         <div className="container">
           <div className="row align-items-center justify-content-center position-relative z-index-1">
             <div
@@ -155,11 +166,38 @@ const Home = ({ match }) => {
               data-wow-delay="0.4s"
             >
               <div className="about-thumb ml-xxl-450">
-                <img
+              <Carousel variant="dark">
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/images/Timm_1.jpg?text=First slide&bg=f5f5f5"
+      alt="First slide"
+    />
+    
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/images/Timm_3.jpg?text=Second slide&bg=eee"
+      alt="Second slide"
+    />
+   
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/images/Timm_2.jpg?text=Third slide&bg=e5e5e5"
+      alt="Third slide"
+    />
+   
+  </Carousel.Item>
+</Carousel>
+
+                {/* <img
                   src="/images/about/01.jpg"
                   alt="ChampEvent"
                   className="w-xxl-none"
-                />
+                /> */}
               </div>
             </div>
             <div className="col-lg-6 col-12 wow fadeInUp" data-wow-delay="0.4s">
@@ -223,40 +261,25 @@ const Home = ({ match }) => {
                 <div className="footer-logo wow fadeInUp" data-wow-delay="0.4s">
                   <img src="/images/logo/Wiesenseppl.png" alt="ChampEvent" />
                 </div>
+                <br/>
+                <img src="/images/qr_christbaum-timmer.png" alt="ChampEvent" />
                 <br />
-                <div
-                  className="footer-copyright wow fadeInUp"
-                  data-wow-delay="0.6s"
-                >
+                <br/>
+                <div>
                   <p className="mb-0 text-white">
                     Firmenname - Impressum & Datenschutz - Cookiehinweis
                   </p>
                   <p className="mb-0 text-white">Kontaktadresse</p>
                 </div>
+                <Link to="/login">Admin</Link>
 
-                <div
-                  className="footer-social wow fadeInUp"
-                  data-wow-delay="0.5s"
-                >
-                  <div className="social-media">
-                    <a href=" #" className="facebook">
-                      <i className="icofont-facebook"></i>
-                    </a>
-                    <a href=" #" className="twitter">
-                      <i className="icofont-twitter"></i>
-                    </a>
-                    <a href=" #" className="linkedin">
-                      <i className="icofont-linkedin"></i>
-                    </a>
-                    <a href=" #" className="youtube">
-                      <i className="icofont-youtube-play"></i>
-                    </a>
-                  </div>
+                
+                
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        
       </footer>
       {/* <!-- ==========Newsletter Section Ends Here========== --> */}
     </Fragment>

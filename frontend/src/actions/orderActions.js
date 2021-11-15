@@ -70,9 +70,9 @@ export const getOrderDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
 
-    console.log("ID", id);
+    // console.log("ID", id);
     const { data } = await api.get(`/api/v1/order/${id}`);
-    console.log("Data", data);
+    // console.log("Data", data);
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
       payload: data.order,
@@ -94,12 +94,12 @@ export const allOrders = () => async (dispatch) => {
 
     dispatch({
       type: ALL_ORDERS_SUCCESS,
-      payload: data,
+      payload: data
     });
   } catch (error) {
     dispatch({
       type: ALL_ORDERS_FAIL,
-      payload: error.response?.data.message,
+      payload: error.response.data.message
     });
   }
 };
