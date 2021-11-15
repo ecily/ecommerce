@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
-import { logout } from "../../actions/userActions";
+import { logout } from '../../actions/userActions'
+
 
 import "../../App.css";
 import "../../assets/css/style.css";
@@ -21,8 +22,8 @@ const Header = () => {
 
   return (
     <Fragment>
-      <header>
-        <nav className="navbar row header-one">
+      
+        <nav className="navbar header-one"  >
           <div className="col-12 col-md-3">
             <div className="navbar-brand">
               <Link
@@ -30,80 +31,37 @@ const Header = () => {
                 style={{ textDecoration: "none" }}
                 className="text-white"
               >
-                ecily<span style={{ color: "red" }}>/</span>Webdevelopment
+                Christbaum-Timmer
               </Link>
             </div>
           </div>
+          
+          <div className="col-12 col-md-3 mt-4 mt-md-2 text-center row">
+          
+          
+            {user && user.role === 'admin' && (
+              <span style={{ color: "#fff", marginRight: "2rem" }}>
+            <Link to="/dashboard" style={{ textDecoration: "none" }}>Dashboard</Link>
+            </span>
+            )}
+             {user && user.role === 'admin' && (
+            <span style={{ color: "#fff", marginRight: "2rem" }}>
+            <Link to='/' style={{ textDecoration: "none" }} onClick={logoutHandler}>Logout</Link>
+            </span>
+            )}
 
-          {/* <div className="col-12 col-md-6 mt-2 mt-md-0">
-                    <Route render={({ history }) => <Search history={history} />} />
-                </div> */}
-
-          <div className="col-12 col-md-2 mt-4 mt-md-0 text-center">
-            <Link to="/cart" style={{ textDecoration: "none" }}>
-              <span id="cart" className="ml-3">
+              <Link to="/cart" style={{ textDecoration: "none" }}>
+              <span style={{ color: "#fff" }}>
                 Warenkorb
               </span>
               <span className="ml-1" id="cart_count">
                 {cartItems.length}
               </span>
             </Link>
-
-            {user ? (
-              <div className="ml-1 dropdown d-inline">
-                <Link
-                  to="#!"
-                  className="btn dropdown-toggle text-white mr-4"
-                  type="button"
-                  id="dropDownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <figure className="avatar avatar-nav">
-                    <img
-                      src={user.avatar && user.avatar.url}
-                      alt={user && user.name}
-                      className="rounded-circle"
-                    />
-                  </figure>
-                  <span>{user && user.name}</span>
-                </Link>
-
-                <div
-                  className="dropdown-menu"
-                  aria-labelledby="dropDownMenuButton"
-                >
-                  {user && user.role === "admin" && (
-                    <Link className="dropdown-item" to="/dashboard">
-                      Dashboard
-                    </Link>
-                  )}
-                  <Link className="dropdown-item" to="/orders/me">
-                    Aufträge
-                  </Link>
-                  <Link className="dropdown-item" to="/me">
-                    Profil
-                  </Link>
-                  <Link
-                    className="dropdown-item text-danger"
-                    to="/"
-                    onClick={logoutHandler}
-                  >
-                    Ausloggen
-                  </Link>
-                </div>
-              </div>
-            ) : (
-              !loading && (
-                <Link to="/login" className="btn ml-4" id="login_btn">
-                  Einloggen
-                </Link>
-              )
-            )}
+          
           </div>
         </nav>
-      </header>
+     
     </Fragment>
   );
 };

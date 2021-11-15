@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import MetaData from '../layouts/MetaData'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItemToCart, removeItemFromCart } from '../../actions/cartActions'
+import EmptyCart from './EmptyCart'
+
 
 const Cart = ({ history }) => {
 
@@ -39,8 +41,14 @@ const Cart = ({ history }) => {
     return (
         <Fragment>
             <MetaData title={'Ihr Warenkorb'} />
-            {cartItems.length === 0 ? <h2 className="mt-5">Ihr Warenkorb ist leer. Füllen Sie ihn doch! :)</h2> : (
+
+            {cartItems.length === 0 ? 
+            <EmptyCart/>
+          
+            : (
                 <Fragment>
+                    <div>
+
                     <h2 className="mt-5">Ihr Warenkorb: <b>{cartItems.length} Produkte</b></h2>
 
                     <div className="row d-flex justify-content-between">
@@ -95,9 +103,12 @@ const Cart = ({ history }) => {
                                 <p>Gesamt: <span className="order-summary-values">€ {cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)}</span></p>
 
                                 <hr />
-                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Weiter</button>
+                                <Link to="/Shipping"  className="lab-btn btn btn-block" ><span>Weiter</span></Link>
+                              
+                            
                             </div>
                         </div>
+                    </div>
                     </div>
                 </Fragment>
             )}
