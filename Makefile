@@ -28,7 +28,6 @@ build-production:
 run-production:
 	ENV=production docker-compose -f docker-compose-production.yml up -d
 
-
 SSH_STRING:=root@161.35.28.164
 
 ssh:
