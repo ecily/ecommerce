@@ -129,7 +129,7 @@ const Home = ({ match }) => {
           className="shape-top-left  d-xxl-block wow fadeInDown"
           data-wow-delay="0.4s"
         >
-          <img src="/images/shape/01.png" alt="" />
+          {/* <img src="/images/shape/01.png" alt="" /> */}
         </div>
         <div
           className="shape-bottom-right d-none d-xxl-block wow fadeInUp"
@@ -171,7 +171,7 @@ const Home = ({ match }) => {
               data-wow-delay="0.4s"
             >
               <div className="banner-thumb">
-                <img src="/images/banner/01.png" alt="ChampEvent" />
+                <img src="/images/timm_4.jpg" alt="ChampEvent" />
               </div>
             </div>
           </div>
@@ -299,7 +299,7 @@ const Home = ({ match }) => {
                   <li>
                     <i className="icofont-checked"></i> We are one of leading.
                   </li>
-                  <img className="qr" src="/images/santa_qr.png" alt="QR code" />
+                  <img className="qr" src="/images/timmer_qr_final.png" alt="QR code" />
                 </ul>
                 <a href="#pricing" className="lab-btn">
                   <span>Unsere Tannen</span>

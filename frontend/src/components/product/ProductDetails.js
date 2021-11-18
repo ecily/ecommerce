@@ -126,14 +126,14 @@ const ProductDetails = ({ match }) => {
     
             <div className="col-12 col-lg-5 mt-5">
                 <h3>{product.name}</h3>
-                <p id="product_id">Produkt # {product._id}</p>
+                {/* <p id="product_id">Produkt # {product._id}</p>
     
                 <hr/>
     
                 <div className="rating-outer">
                     <div className="rating-inner" style={{ width: `${(product.ratings / 5) * 100}%` }}></div>
                 </div>
-                <span id="no_of_reviews">({product.numOfReviews} Bewertungen)</span>
+                <span id="no_of_reviews">({product.numOfReviews} Bewertungen)</span> */}
     
                 <hr/>
     
@@ -150,8 +150,8 @@ const ProductDetails = ({ match }) => {
     
                 <hr/>
     
-                <p>Status: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'}>
-                    {product.stock > 0 ? 'In stock' : 'Out of stock'}
+                <p><span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'}>
+                    {product.stock > 0 ? 'Auf Lager' : 'Leider ausverkauft'}
                 </span></p>
     
                 <hr/>
@@ -159,7 +159,7 @@ const ProductDetails = ({ match }) => {
                 <h4 className="mt-2">Beschreibung:</h4>
                 <p>{product.description}</p>
                 <hr/>
-                <p id="product_seller mb-3">Verkäufer: <strong>{product.seller}</strong></p>
+                {/* <p id="product_seller mb-3">Verkäufer: <strong>{product.seller}</strong></p>
                 
                 {user ?   <button id="review_btn" type="button" 
                 className="btn btn-primary mt-4" 
@@ -170,7 +170,7 @@ const ProductDetails = ({ match }) => {
                 </button> :
                 <div className='alert-danger mt-5' type='alert'>Bitte melden Sie sich an, um Bewertungen abzugeben</div>
                 }
-              
+               */}
                 
                 <div className="row mt-2 mb-5">
                     <div className="rating w-50">
@@ -215,10 +215,10 @@ const ProductDetails = ({ match }) => {
     
         </div>
         </div>
-        {product.reviews && product.reviews.length > 0 && (
+        {/* {product.reviews && product.reviews.length > 0 && (
             <ListReviews reviews={product.reviews}/>
             
-        )}
+        )} */}
             </Fragment>
 
         )}
