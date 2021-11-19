@@ -34,9 +34,9 @@ const Cart = ({ history }) => {
 
     }
 
-    const checkoutHandler = () => {
-        history.push('/login?redirect=shipping')
-    }
+    // const checkoutHandler = () => {
+    //     history.push('/login?redirect=shipping')
+    // }
 
     return (
         <Fragment>

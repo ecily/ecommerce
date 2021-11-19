@@ -52,12 +52,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        
        <Header />
         <Route path="/" component={Home} exact />
+
       <div className="container container-fluid">
-        
-           
           <Route path="/search/:keyword" component={Home} />
           <Route path="/product/:id" component={ProductDetails} exact />
           <Route path="/cart" component={Cart} exact />
