@@ -12,7 +12,7 @@ const Header = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
 
-  const { user, loading } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state.cart);
 
   const logoutHandler = () => {

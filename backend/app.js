@@ -1,7 +1,7 @@
 const express = require("express");
-const app = express();
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 require("dotenv").config();
 
 //11.10. versuch mit multer
@@ -11,10 +11,14 @@ const multer = require("multer");
 const path = require("path");
 const errorMiddleware = require("./middlewares/errors");
 
+
+const app = express();
+
 //11.10. auskommentieren vorher
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(cors());
 
 //19.10.21 express-fileupload for cloudinary
 //app.use(fileUpload)
@@ -25,24 +29,15 @@ var forms = multer({
     fieldSize: 25 * 1024 * 1024,
   },
 });
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 app.use(forms.array());
-app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.urlencoded({ extended: true }));
 
 // Import all routes
 const products = require("./routes/product");
 const auth = require("./routes/auth");
 const payment = require("./routes/payment");
 const order = require("./routes/order");
-
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 
 app.use("/api/v1", products);
 app.use("/api/v1", auth);

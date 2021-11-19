@@ -47,7 +47,7 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   if (!user) {
     return next(
       new ErrorHandler(
-        'Hoppala! Falsche Mailadresse oder falsches Passwort.',
+        'Hoppala! Keinen User mit der Email gefunden!',
         401
       )
     );
@@ -56,7 +56,7 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   if (!isPasswordMatched) {
     return next(
       new ErrorHandler(
-        'Hoppala! Falsche Mailadresse oder falsches Passwort.',
+        'Hoppala! Passwort stimmt nicht überein!',
         401
       )
     );
