@@ -1,6 +1,9 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import MetaData from "../layouts/MetaData";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart, removeItemFromCart } from "../../actions/cartActions";
+import EmptyCart from "./EmptyCart";
 import api from "../../api";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -10,42 +13,60 @@ toast.configure();
 
 const Cart = ({ history }) => {
   const dispatch = useDispatch();
-  const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    // Check to see if this is a redirect back from Checkout
-    const query = new URLSearchParams(window.location.search);
+  const { cartItems } = useSelector((state) => state.cart);
 
-    if (query.get("success")) {
-      setMessage("Order placed! You will receive an email confirmation.");
-    }
+  const removeCartItemHandler = (id) => {
+    dispatch(removeItemFromCart(id));
+  };
 
-    const handleCheckout = (e) => {
-      e.preventDefault();
-      api
-        .post(
-          "/api/v1/create-checkout-session",
-          { cartItems },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then((response) => {
-          console.log(response);
-          return response.data;
-        })
-        .then((data) => {
-          console.log("Success", data);
-          window.location.href = data.url;
-        })
-        .catch((error) => {
-          console.error("Error", error);
-        });
-    };
+  const increaseQty = (id, quantity, stock) => {
+    const newQty = quantity + 1;
 
-    return (
+    if (newQty > stock) return;
+
+    dispatch(addItemToCart(id, newQty));
+  };
+
+  const decreaseQty = (id, quantity) => {
+    const newQty = quantity - 1;
+
+    if (newQty <= 0) return;
+
+    dispatch(addItemToCart(id, newQty));
+  };
+
+  const handleCheckout = (e) => {
+    e.preventDefault();
+    api
+      .post(
+        "/api/v1/create-checkout-session",
+        { cartItems },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        return response.data;
+      })
+      .then((data) => {
+        console.log("Success", data);
+        window.location.href = data.url;
+      })
+      .catch((error) => {
+        console.error("Error", error);
+      });
+  };
+
+  return (
+    <Fragment>
+      <MetaData title={"Ihr Warenkorb"} />
+      {cartItems.length === 0 ? (
+        <EmptyCart />
+      ) : (
         <Fragment>
           <ToastContainer />
           <div>
@@ -162,6 +183,7 @@ const Cart = ({ history }) => {
           </div>
         </Fragment>
       )}
+    </Fragment>
   );
 };
 
