@@ -1,15 +1,11 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import MetaData from "../layouts/MetaData";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, removeItemFromCart } from "../../actions/cartActions";
 import EmptyCart from "./EmptyCart";
 import api from "../../api";
-import { ToastContainer, toast } from "react-toastify";
-
-import "react-toastify/dist/ReactToastify.css";
-
-toast.configure();
 
 const Cart = ({ history }) => {
   const dispatch = useDispatch();
@@ -49,7 +45,6 @@ const Cart = ({ history }) => {
         }
       )
       .then((response) => {
-        console.log(response);
         return response.data;
       })
       .then((data) => {
@@ -68,7 +63,6 @@ const Cart = ({ history }) => {
         <EmptyCart />
       ) : (
         <Fragment>
-          <ToastContainer />
           <div>
             <h2 className="mt-5">
               Ihr Warenkorb: <b>{cartItems.length} Produkte</b>
@@ -176,7 +170,9 @@ const Cart = ({ history }) => {
                   </p>
 
                   <hr />
-                  <button onClick={handleCheckout}>Bezahlen</button>
+                  <Button className="lab-btn" onClick={handleCheckout}>
+                    Bezahlen
+                  </Button>
                 </div>
               </div>
             </div>
