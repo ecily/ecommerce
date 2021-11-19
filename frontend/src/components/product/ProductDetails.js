@@ -145,7 +145,7 @@ const ProductDetails = ({ match }) => {
     
                     <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
                 </div>
-                 <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4"
+                 <button type="button lab-btn"  className="btn lab-btn d-inline ml-4 text-white"
                  disabled={product.stock === 0} onClick={addToCart}>Zum Warenkorb hinzufügen</button>
     
                 <hr/>

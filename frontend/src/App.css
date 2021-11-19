@@ -617,13 +617,40 @@ ul.CTAs a {
   color: grey;
 }
 
+
+
 /* TIMMER */
 .qr {
   height: 200px;
 }
-
+.timmerlogo {
+  height: 300px;
+}
 .pricing_pic {
   height: 250px;
 }
+.timmerrot {
+  color: #ac101e;
+}
+.timmerweiss {
+  color: #fff;
+}
+.about-section {
+  background-color: #ac101e;
+}
+.timmergruen {
+background-color: #14cc3c;
+}
+.timmerpic {
+  height: 250px;
+}
 
-
+.timmerpos {
+  flex: 0 0 33.3333333%;
+  max-width: 33.3333333%;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: flex;
+}

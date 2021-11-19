@@ -18,7 +18,7 @@ const ConfirmOrder = ({ history }) => {
     //Steuer 20%
     const shippingPrice = itemsPrice > 50 ? 0 : 10
     const taxPrice = Number((0.2 * itemsPrice).toFixed(2))
-    const totalPrice = (itemsPrice + shippingPrice + taxPrice).toFixed(2)
+    const totalPrice = (itemsPrice/100*87 + shippingPrice*0 + itemsPrice/100*13).toFixed(2)
 
     const processToPayment = () => {
         const data = {
@@ -78,9 +78,9 @@ const ConfirmOrder = ({ history }) => {
                     <div id="order_summary">
                         <h4>Zusammenfassung</h4>
                         <hr />
-                        <p>Produkte:  <span className="order-summary-values">€ {itemsPrice}</span></p>
-                        <p>Versand: <span className="order-summary-values">€ {shippingPrice}</span></p>
-                        <p>Mwst (20%):  <span className="order-summary-values">€ {taxPrice}</span></p>
+                        <p>Produkte (Netto):  <span className="order-summary-values">€ {(itemsPrice/100*87).toFixed(2)}</span></p>
+                        <p>Versand: <span className="order-summary-values">€ 0</span></p>
+                        <p>Mwst (13%):  <span className="order-summary-values">€ {(itemsPrice/100*13).toFixed(2)}</span></p>
 
                         <hr />
 
