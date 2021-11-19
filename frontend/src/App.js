@@ -53,9 +53,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+       <Header />
         <Route path="/" component={Home} exact />
-        <div className="container container-fluid">
+
+      <div className="container container-fluid">
           <Route path="/search/:keyword" component={Home} />
           <Route path="/product/:id" component={ProductDetails} exact />
           <Route path="/cart" component={Cart} exact />
@@ -64,11 +65,6 @@ function App() {
           <ProtectedRoute path="/order/:id" component={OrderDetails} exact />
           <Route path="/success" component={OrderSuccess} />
           <ProtectedRoute path="/cancel" component={OrderError} />
-          {/* {stripeApiKey && (
-            <Elements stripe={loadStripe(stripeApiKey)}>
-              <ProtectedRoute path="/payment" component={Payment} />
-            </Elements>
-          )} */}
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/password/forgot" component={ForgotPassword} exact />
@@ -136,8 +132,6 @@ function App() {
           component={ProductReviews}
           exact
         />
-
-        {/* <Footer/> */}
       </div>
     </Router>
   );

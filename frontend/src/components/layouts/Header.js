@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { logout } from '../../actions/userActions'
 
-
 import "../../App.css";
 import "../../assets/css/style.css";
 
@@ -30,8 +29,7 @@ const Header = () => {
                 to="/"
                 style={{ textDecoration: "none" }}
                 className="text-white"
-              >
-                Christbaum-Timmer
+              >Christbaum-Timmer
               </Link>
             </div>
           </div>

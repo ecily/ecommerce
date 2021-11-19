@@ -1,9 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import MetaData from "../layouts/MetaData";
-import { useDispatch, useSelector } from "react-redux";
-import { addItemToCart, removeItemFromCart } from "../../actions/cartActions";
-import EmptyCart from "./EmptyCart";
+import { useDispatch } from "react-redux";
 import api from "../../api";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -23,80 +20,32 @@ const Cart = ({ history }) => {
       setMessage("Order placed! You will receive an email confirmation.");
     }
 
-    if (query.get("canceled")) {
-      setMessage(
-        "Order canceled -- continue to shop around and checkout when you're ready."
-      );
-    }
-  }, []);
+    const handleCheckout = (e) => {
+      e.preventDefault();
+      api
+        .post(
+          "/api/v1/create-checkout-session",
+          { cartItems },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          console.log(response);
+          return response.data;
+        })
+        .then((data) => {
+          console.log("Success", data);
+          window.location.href = data.url;
+        })
+        .catch((error) => {
+          console.error("Error", error);
+        });
+    };
 
-  const { cartItems } = useSelector((state) => state.cart);
-
-  const removeCartItemHandler = (id) => {
-    dispatch(removeItemFromCart(id));
-  };
-
-  const increaseQty = (id, quantity, stock) => {
-    const newQty = quantity + 1;
-
-    if (newQty > stock) return;
-
-    dispatch(addItemToCart(id, newQty));
-  };
-
-  const decreaseQty = (id, quantity) => {
-    const newQty = quantity - 1;
-
-    if (newQty <= 0) return;
-
-    dispatch(addItemToCart(id, newQty));
-  };
-
-  // const checkoutHandler = () => {
-  //     history.push('/login?redirect=shipping')
-  // }
-
-  const handleCheckout = (e) => {
-    e.preventDefault();
-    api
-      .post(
-        "/api/v1/create-checkout-session",
-        { cartItems },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      )
-      .then((response) => {
-        console.log(response);
-        return response.data;
-      })
-      .then((data) => {
-        console.log("Success", data);
-        window.location.href = data.url;
-      })
-      .catch((error) => {
-        console.error("Error", error);
-      });
-    // const { status } = response.data;
-    // console.log(response.data);
-    // if (status === "success") {
-    //   toast.success(
-    //     "Transaktion erfolgreich! Wir haben dir eine Email geschickt."
-    //   );
-    // } else {
-    //   toast.error("Transaktionsfehler! Es wurde keine Abbuchung vorgenommen.");
-    // }
-  };
-
-  return (
-    <Fragment>
-      <MetaData title={"Ihr Warenkorb"} />
-
-      {cartItems.length === 0 ? (
-        <EmptyCart />
-      ) : (
+    return (
         <Fragment>
           <ToastContainer />
           <div>
@@ -207,29 +156,12 @@ const Cart = ({ history }) => {
 
                   <hr />
                   <button onClick={handleCheckout}>Bezahlen</button>
-                  {/* <StripeCheckout
-                    stripeKey="pk_test_51JuzJIAKIrQvCrwuvgk2kRNWq50KHRmwkrYl3ZtMzXSn6EmJi3Qq9Zru5j3SGBLsPSw7L8LcDIp5KBbrY4EFYMNs007nV29iUP"
-                    token={handleToken}
-                    shippingAddress
-                    billingAddress
-                    amount={
-                      cartItems
-                        .reduce(
-                          (acc, item) => acc + item.quantity * item.price,
-                          0
-                        )
-                        .toFixed(2) * 100
-                    }
-                    name="Christbäum(e)"
-                  /> */}
-                  {/* <Link to="/Shipping"  className="lab-btn btn btn-block" ><span>Weiter</span></Link> */}
                 </div>
               </div>
             </div>
           </div>
         </Fragment>
       )}
-    </Fragment>
   );
 };
 
