@@ -49,18 +49,14 @@ exports.createCheckoutSession = catchAsyncErrors(async (req, res, next) => {
     success_url:
       process.env.NODE_ENV === "DEVELOPMENT"
         ? `http://localhost:3000/success?id={CHECKOUT_SESSION_ID}`
-        : "/success?id={CHECKOUT_SESSION_ID}",
+        : `${process.env.BASE_URI}/success?id={CHECKOUT_SESSION_ID}`,
     cancel_url:
       process.env.NODE_ENV === "DEVELOPMENT"
         ? `http://localhost:3000/cancel`
-        : "/cancel",
+        : `${process.env.BASE_URI}/cancel`,
   });
 
-  if (process.env.NODE_ENV === "DEVELOPMENT") {
-    res.json({ url: session.url });
-  } else {
-    res.json(303, session.url);
-  }
+  res.json({ url: session.url });
   //only works within the same domain otherwise I'll got an cors error
   //workaround for cors error locally
 });
