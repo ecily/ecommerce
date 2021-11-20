@@ -238,8 +238,6 @@ const ProductDetails = ({ match }) => {
           </div>
         </Fragment>
       )}
-    </Fragment>
-  );
-};
+ 
 
 export default ProductDetails;
