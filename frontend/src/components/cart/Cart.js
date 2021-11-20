@@ -49,7 +49,7 @@ const Cart = ({ history }) => {
                 <Fragment>
                     <div>
 
-                    <h2 className="mt-5">Ihr Warenkorb: <b>{cartItems.length} Produkte</b></h2>
+                    <h2 className="mt-5">Ihr Warenkorb: <b>{cartItems.length} Produkt</b></h2>
 
                     <div className="row d-flex justify-content-between">
                         <div className="col-12 col-lg-8">
@@ -99,9 +99,11 @@ const Cart = ({ history }) => {
                             <div id="order_summary">
                                 <h4>Zusammenfassung</h4>
                                 <hr />
-                                <p>Menge:  <span className="order-summary-values">{cartItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} (Units)</span></p>
+                                <p>Menge:  <span className="order-summary-values">{cartItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} Stück</span></p>
+                                <p>Gesamt (Netto): <span className="order-summary-values">€ {cartItems.reduce((acc, item) => (acc + item.quantity * item.price)*0.87, 0).toFixed(2)}</span></p>
+                                <p>Gesamt (13% MWST): <span className="order-summary-values">€ {cartItems.reduce((acc, item) => (acc + item.quantity * item.price)*0.13, 0).toFixed(2)}</span></p>
+                                <p>Versandkosten: <span className="order-summary-values">€ 0.00</span></p>
                                 <p>Gesamt: <span className="order-summary-values">€ {cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)}</span></p>
-
                                 <hr />
                                 <Link to="/Shipping"  className="lab-btn btn btn-block" ><span>Weiter</span></Link>
                               

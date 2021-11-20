@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Carousel, Modal, Button, Card, Row, Col} from "react-bootstrap"
+import { Carousel, Modal, Button, Card } from "react-bootstrap"
 // import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../actions/productActions";
@@ -143,10 +143,10 @@ const Home = ({ match }) => {
                 </span>
                 <h2 className="banner-title">Christbaumhandel Timmer</h2>
                 <p className="banner-sub-title text-white">
-                  Bei uns finden sie den perfekten Christbaum für Ihr Weihnachtsfest.
+                  Bei uns finden Sie den perfekten Christbaum für Ihr Weihnachtsfest.
                 </p>
                 <p className="banner-desc text-white mb-5">
-                Besuchen sie uns auf einem unserer vielen Verkaufsständen in Graz und Umgebung. Stressfrei und kontaktlos können Sie ihren Christbaum ab diesem Jahr auch online bestellen.
+                Besuchen Sie uns auf einem unserer vielen Verkaufsständen in Graz und Umgebung. Stressfrei und kontaktlos können Sie ihren Christbaum ab diesem Jahr auch online bestellen.
                 </p>
                 {/* <div className="banner-button-group d-inline-flex"> */}
                 <div className="mb-5">
@@ -240,7 +240,7 @@ const Home = ({ match }) => {
                 <span className="about-subtitle">Über uns</span>
                 <h2 className="about-title"><span style={{ color: "#14cc3c" }}>Timmer's Nordmann-Tannen</span></h2>
                 <p className="about-desc">
-                Seit 30 Jahren führen wir, Willibald und Waltraud Timmer den Christbaumhandel Timmer in 2ter Generation. Die Zufriedenheit unserer Kunden liegt uns sehr am Herzen und die Qualität unserer Nordmanntannen zeichnet uns aus. 
+                Seit 30 Jahren führen wir, Willibald und Waltraud Timmer den Christbaumhandel Timmer in zweiter Generation. Die Zufriedenheit unserer Kunden liegt uns sehr am Herzen und die Qualität unserer Nordmanntannen zeichnet uns aus. 
                 Wir freuen uns auf ihren Besuch, persönlich oder online, und wünschen Ihnen Frohe Weihnachten.
                 Ihre Familie Timmer
                 </p>
@@ -252,7 +252,7 @@ const Home = ({ match }) => {
                     Kühlen Sie Ihren Christbaum bis zum Heiligen Abend so gut wie möglich!
                   </li>
                   <li className="mb-3">
-                   Achten Sie auf Ihre Raumtemperatur – Je kühler, umso länger bleibt Ihr Baum frisch!
+                   Achten Sie auf Ihre Raumtemperatur – Je kühler, desto länger bleibt Ihr Baum frisch!
                   </li>
                   <li className="mb-3">
                    Entfernen Sie das Verpackungsnetz von unten nach oben!
@@ -277,7 +277,7 @@ const Home = ({ match }) => {
                 <div id="stand" className="row align-items-center justify-content-center position-relative z-index-1">
      
 
-                <Card style={{ alignItems: 'center', height:"300px"}} className="mr-3 mb-3 timmerpos">
+                <Card style={{ alignItems: 'center', height:"28rem"}} className="mr-3 mb-3 timmerpos">
                   {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                   <Card.Body style={{ textAlign: 'center'}}>
                     <Card.Title className="timmerrot">Ab Hof Schirning</Card.Title>
@@ -293,7 +293,7 @@ const Home = ({ match }) => {
                   </Card.Body>
                 </Card>
 
-                <Card style={{ alignItems: 'center', height:"300px" }} className="mr-3 mb-3 timmerpos">
+                <Card style={{ alignItems: 'center', height:"28rem" }} className="mr-3 mb-3 timmerpos">
                   {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                   <Card.Body style={{ textAlign: 'center'}}>
                     <Card.Title className="timmerrot">Hauptplatz Judendorf</Card.Title>
@@ -309,7 +309,7 @@ const Home = ({ match }) => {
                   </Card.Body>
                 </Card>
 
-                <Card style={{ alignItems: 'center', height:"300px"  }} className="mr-3 mb-3 timmerpos">
+                <Card style={{ alignItems: 'center', height:"28rem"  }} className="mr-3 mb-3 timmerpos">
                   {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                   <Card.Body style={{ textAlign: 'center'}}>
                     <Card.Title className="timmerrot">BILLA Peggau</Card.Title>
@@ -326,7 +326,7 @@ const Home = ({ match }) => {
                   </Card.Body>
                 </Card>
 
-                <Card style={{ alignItems: 'center', height:"300px"  }} className="mr-3 mb-3 timmerpos">
+                <Card style={{ alignItems: 'center', height:"28rem"  }} className="mr-3 mb-3 timmerpos">
                   {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                   <Card.Body style={{ textAlign: 'center'}}>
                     <Card.Title className="timmerrot">Center West</Card.Title>
@@ -343,7 +343,7 @@ const Home = ({ match }) => {
                   </Card.Body>
                 </Card>
 
-                <Card style={{ alignItems: 'center', height:"300px"  }} className="mr-3 mb-3 timmerpos">
+                <Card style={{ alignItems: 'center', height:"28rem"  }} className="mr-3 mb-3 timmerpos">
                   {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                   <Card.Body style={{ textAlign: 'center'}}>
                     <Card.Title className="timmerrot">BILLA Plus Eggenberg
@@ -361,7 +361,7 @@ const Home = ({ match }) => {
                   </Card.Body>
                 </Card>
 
-                <Card style={{ alignItems: 'center', height:"300px"  }} className="mr-3 mb-3 timmerpos">
+                <Card style={{ alignItems: 'center', height:"28rem"  }} className="mr-3 mb-3 timmerpos">
                   {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                   <Card.Body style={{ textAlign: 'center'}}>
                     <Card.Title className="timmerrot">Rosseger Kai
@@ -379,7 +379,7 @@ const Home = ({ match }) => {
                   </Card.Body>
                 </Card>
 
-                <Card style={{ alignItems: 'center', height:"300px"  }} className="mr-3 mb-3 timmerpos">
+                <Card style={{ alignItems: 'center', height:"28rem"  }} className="mr-3 mb-3 timmerpos">
                   {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                   <Card.Body style={{ textAlign: 'center'}}>
                     <Card.Title className="timmerrot">Erzherzog Johann Alle
