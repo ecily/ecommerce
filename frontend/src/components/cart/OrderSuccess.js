@@ -1,30 +1,45 @@
-import React, { Fragment } from 'react'
-// import { Link } from 'react-router-dom'
-import MetaData from '../layouts/MetaData'
+import React, { Fragment, useEffect } from "react";
+import api from "../../api";
+import MetaData from "../layouts/MetaData";
 
-const OrderSuccess = () => {
-    return (
-        <Fragment>
+import { useDispatch, useSelector } from "react-redux";
+import { removeItemFromCart } from "../../actions/cartActions";
 
-            <MetaData title={'Erfolg'} />
+const OrderSuccess = ({ history }) => {
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    api.get(`/api/v1/checkout-session?id=${id}`).then((response) => {
+      setTimeout(() => history.push("/"), 5000);
+    });
+  }, [history]);
 
-            <div className="row justify-content-center">
-            <div className="banner-thumb">
-                        <img src="/images/banner/01.png" alt="" />
-                    </div>
-                
-                <div className="col-6 mt-5 text-center">
-                    {/* <img className="my-5 img-fluid d-block mx-auto" src="/images/santa.jpg" alt="Order Success" width="200" height="200" /> */}
-                    
-                  
-                    
-                    
-                    <h2>Dankeschön! Ihr Tannenbaum ist unterwegs zu Ihnen! Frohe Weihnachten!</h2>
-                    {/* <Link to="/orders/me">Meine Aufträge</Link> */}
-                </div>
-            </div>
+  const dispatch = useDispatch();
+  const { cartItems } = useSelector((state) => state.cart);
+  useEffect(() => {
+    const removeCartItemHandler = (id) => {
+      dispatch(removeItemFromCart(id));
+    };
+    cartItems.every((item) => removeCartItemHandler(item.product));
+  });
 
-        </Fragment>
-    )
-}
-export default OrderSuccess
+  return (
+    <Fragment>
+      <MetaData title={"Erfolg"} />
+
+      <div className="row justify-content-center">
+        <div className="banner-thumb">
+          <img src="/images/banner/01.png" alt="" />
+        </div>
+
+        <div className="col-6 mt-5 text-center">
+          <h2>
+            Dankeschön! Ihr Tannenbaum ist unterwegs zu Ihnen! Frohe
+            Weihnachten!
+          </h2>
+        </div>
+      </div>
+    </Fragment>
+  );
+};
+export default OrderSuccess;

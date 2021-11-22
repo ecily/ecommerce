@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+// import { useEffect, useState } from "react";
 import Header from "./components/layouts/Header";
 import Home from "./components/Home";
 import ProductDetails from "./components/product/ProductDetails";
@@ -13,7 +13,7 @@ import ForgotPassword from "./components/user/ForgotPassword";
 import NewPassword from "./components/user/NewPassword";
 import Shipping from "./components/cart/Shipping";
 import Cart from "./components/cart/Cart";
-import Payment from "./components/cart/Payment";
+// import Payment from "./components/cart/Payment";
 import ConfirmOrder from "./components/cart/ConfirmOrder";
 import OrderSuccess from "./components/cart/OrderSuccess";
 import ListOrders from "./components/order/ListOrders";
@@ -27,47 +27,24 @@ import ProcessOrder from "./components/admin/ProcessOrder";
 import UsersList from "./components/admin/UsersList";
 import UpdateUser from "./components/admin/UpdateUser";
 import ProductReviews from "./components/admin/ProductReviews";
-import { loadUser } from "./actions/userActions";
-import store from "./store";
-import api from "./api";
-//import { forgotPasswordReducer } from './reducers/userReducers'
-
-//Payments
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-
 function App() {
-  const [stripeApiKey, setStripeApiKey] = useState("");
-
-  useEffect(() => {
-    store.dispatch(loadUser());
-    async function getStripeApiKey() {
-      const { data } = await api.get("/api/v1/stripeapi");
-
-      setStripeApiKey(data.stripeApiKey);
-    }
-    getStripeApiKey();
-  }, []);
-
   return (
     <Router>
       <div className="App">
-       <Header />
+        <Header />
         <Route path="/" component={Home} exact />
 
-      <div className="container container-fluid">
+        <div className="container container-fluid">
           <Route path="/search/:keyword" component={Home} />
           <Route path="/product/:id" component={ProductDetails} exact />
           <Route path="/cart" component={Cart} exact />
           <ProtectedRoute path="/shipping" component={Shipping} />
           <ProtectedRoute path="/confirm" component={ConfirmOrder} exact />
           <ProtectedRoute path="/order/:id" component={OrderDetails} exact />
-          <ProtectedRoute path="/success" component={OrderSuccess} />
-          {stripeApiKey && (
-            <Elements stripe={loadStripe(stripeApiKey)}>
-              <ProtectedRoute path="/payment" component={Payment} />
-            </Elements>
-          )}
+          <Route path="/success" component={OrderSuccess} />
+          <Route path="/cancel">
+            <Redirect to="/cart" />
+          </Route>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/password/forgot" component={ForgotPassword} exact />
@@ -135,8 +112,6 @@ function App() {
           component={ProductReviews}
           exact
         />
-
-        {/* <Footer/> */}
       </div>
     </Router>
   );

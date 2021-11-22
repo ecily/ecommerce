@@ -1,9 +1,8 @@
-const User = require('../models/user')
+const User = require('../models/user');
 
-const catchAsyncErrors = require('./catchAsyncErrors')
-const ErrorHandler = require('../utils/errorHandler')
-const jwt = require('jsonwebtoken')
-
+const catchAsyncErrors = require('./catchAsyncErrors');
+const ErrorHandler = require('../utils/errorHandler');
+const jwt = require('jsonwebtoken');
 
 //Check if user is authenthicated or not
 exports.isAuthenticatedUser = catchAsyncErrors(async (req,res,next) => {
@@ -19,18 +18,22 @@ exports.isAuthenticatedUser = catchAsyncErrors(async (req,res,next) => {
     
     req.user = await User.findById(decoded.id)
 
-    next()
+  req.user = await User.findById(decoded.id);
 
-})
+  next();
+});
 
 //verify user roles
 exports.authorizeRoles = (...roles) => {
-    return (req, res, next) => {
-        if(!roles.includes(req.user.role)) {
-            return next(
-            new ErrorHandler(`Als ${req.user.role} ist das leider nicht möglich.`, 403)
-            )
-        }
-        next()
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new ErrorHandler(
+          `Als ${req.user.role} ist das leider nicht möglich.`,
+          403
+        )
+      );
     }
-}
+    next();
+  };
+};

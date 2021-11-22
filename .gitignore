@@ -5,6 +5,10 @@ node_modules
 .pnp.js
 /backend/config/config.env
 
+# package-lock
+package-lock.json
+
+
 # production
 /frontend/build
 

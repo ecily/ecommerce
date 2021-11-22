@@ -4,6 +4,10 @@ start-backend:
 start-frontend:
 	cd frontend && npm install && ${MAKE} run-start
 
+kill-port:
+	npx kill-port 4000
+	npx kill-port 3000
+
 
 build-dev:
 	cd frontend && $(MAKE) build-dev
@@ -27,7 +31,6 @@ build-production:
 
 run-production:
 	ENV=production docker-compose -f docker-compose-production.yml up -d
-
 
 SSH_STRING:=root@161.35.28.164
 
