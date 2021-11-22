@@ -127,7 +127,6 @@ const Cart = ({ history }) => {
                             </span>
                           </div>
                         </div>
-
                         <div className="col-4 col-lg-1 mt-4 mt-lg-0">
                           <i
                             id="delete_cart_item"
@@ -153,8 +152,38 @@ const Cart = ({ history }) => {
                         (acc, item) => acc + Number(item.quantity),
                         0
                       )}{" "}
-                      (Units)
+                      Stück
                     </span>
+                  </p>
+                  <p>
+                    Gesamt (Netto):{" "}
+                    <span className="order-summary-values">
+                      €{" "}
+                      {cartItems
+                        .reduce(
+                          (acc, item) =>
+                            (acc + item.quantity * item.price) * 0.87,
+                          0
+                        )
+                        .toFixed(2)}
+                    </span>
+                  </p>
+                  <p>
+                    Gesamt (13% MWST):{" "}
+                    <span className="order-summary-values">
+                      €{" "}
+                      {cartItems
+                        .reduce(
+                          (acc, item) =>
+                            (acc + item.quantity * item.price) * 0.13,
+                          0
+                        )
+                        .toFixed(2)}
+                    </span>
+                  </p>
+                  <p>
+                    Versandkosten:{" "}
+                    <span className="order-summary-values">€ 0.00</span>
                   </p>
                   <p>
                     Gesamt:{" "}

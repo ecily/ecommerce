@@ -646,11 +646,11 @@ background-color: #14cc3c;
 }
 
 .timmerpos {
-  flex: 0 0 33.3333333%;
-  max-width: 33.3333333%;
+  flex: 0 0 50%;
+  max-width: 50%;
   position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  width: 25%;
+  padding-right: 5px;
+  padding-left: 5px;
   display: flex;
 }

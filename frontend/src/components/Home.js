@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Carousel, Modal, Button, Card } from "react-bootstrap";
+import { Carousel, Modal, Button, Card } from "react-bootstrap"
+// import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../actions/productActions";
 import Product from "./product/Product";
@@ -199,13 +200,10 @@ const Home = ({ match }) => {
                 </span>
                 <h2 className="banner-title">Christbaumhandel Timmer</h2>
                 <p className="banner-sub-title text-white">
-                  Bei uns finden sie den perfekten Christbaum für Ihr
-                  Weihnachtsfest.
+                  Bei uns finden Sie den perfekten Christbaum für Ihr Weihnachtsfest.
                 </p>
                 <p className="banner-desc text-white mb-5">
-                  Besuchen sie uns auf einem unserer vielen Verkaufsständen in
-                  Graz und Umgebung. Stressfrei und kontaktlos können Sie ihren
-                  Christbaum ab diesem Jahr auch online bestellen.
+                Besuchen Sie uns auf einem unserer vielen Verkaufsständen in Graz und Umgebung. Stressfrei und kontaktlos können Sie ihren Christbaum ab diesem Jahr auch online bestellen.
                 </p>
                 {/* <div className="banner-button-group d-inline-flex"> */}
                 <div className="mb-5">
@@ -302,12 +300,9 @@ const Home = ({ match }) => {
                   </span>
                 </h2>
                 <p className="about-desc">
-                  Seit 30 Jahren führen wir, Willibald und Waltraud Timmer den
-                  Christbaumhandel Timmer in 2ter Generation. Die Zufriedenheit
-                  unserer Kunden liegt uns sehr am Herzen und die Qualität
-                  unserer Nordmanntannen zeichnet uns aus. Wir freuen uns auf
-                  ihren Besuch, persönlich oder online, und wünschen Ihnen Frohe
-                  Weihnachten. Ihre Familie Timmer
+                Seit 30 Jahren führen wir, Willibald und Waltraud Timmer den Christbaumhandel Timmer in zweiter Generation. Die Zufriedenheit unserer Kunden liegt uns sehr am Herzen und die Qualität unserer Nordmanntannen zeichnet uns aus. 
+                Wir freuen uns auf ihren Besuch, persönlich oder online, und wünschen Ihnen Frohe Weihnachten.
+                Ihre Familie Timmer
                 </p>
 
                 <span className="about-subtitle">
@@ -322,8 +317,7 @@ const Home = ({ match }) => {
                     wie möglich!
                   </li>
                   <li className="mb-3">
-                    Achten Sie auf Ihre Raumtemperatur – Je kühler, umso länger
-                    bleibt Ihr Baum frisch!
+                   Achten Sie auf Ihre Raumtemperatur – Je kühler, desto länger bleibt Ihr Baum frisch!
                   </li>
                   <li className="mb-3">
                     Entfernen Sie das Verpackungsnetz von unten nach oben!
@@ -354,216 +348,132 @@ const Home = ({ match }) => {
                 </a>
               </div>
             </div>
-
-            <div
-              id="stand"
-              className="row align-items-center justify-content-center position-relative z-index-1"
-            >
-              <Card
-                style={{ alignItems: "center", height: "300px" }}
-                className="mr-3 mb-3 timmerpos"
-              >
-                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                <Card.Body style={{ textAlign: "center" }}>
-                  <Card.Title className="timmerrot">
-                    Ab Hof Schirning
-                  </Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    vulgo Wiesenseppl
-                  </Card.Subtitle>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Schirning 70, 8112 Gratwein Straßengel
-                  </Card.Subtitle>
-                  <Card.Text className="timmerrot">
-                    Öffnungszeiten
-                    <br />
-                    08.12. - 23.12. 10:00 - 17:00
-                    <br />-
-                  </Card.Text>
-                  <a
-                    href="https://www.google.at/maps/place/Schirning+70a,+8112+Eisbach/@47.1066429,15.289765,113m/data=!3m1!1e3!4m5!3m4!1s0x476e324f327630d5:0x9135d1918d555a83!8m2!3d47.1067099!4d15.2899719"
-                    className="lab-btn mr-2"
-                  >
-                    Auf Google Maps öffnen
-                  </a>
-                </Card.Body>
-              </Card>
-
-              <Card
-                style={{ alignItems: "center", height: "300px" }}
-                className="mr-3 mb-3 timmerpos"
-              >
-                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                <Card.Body style={{ textAlign: "center" }}>
-                  <Card.Title className="timmerrot">
-                    Hauptplatz Judendorf
-                  </Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Vis a vis Gemeindeamt
-                  </Card.Subtitle>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Hauptplatz 1, 8111 Gratwein Straßengel
-                  </Card.Subtitle>
-                  <Card.Text className="timmerrot">
-                    Öffnungszeiten
-                    <br />
-                    14.12. – 23.12 09:00 – 17:00 Uhr
-                    <br />
-                    24.12. 09:00 – 12:00 Uhr
-                  </Card.Text>
-                  <a
-                    href="https://www.google.at/maps/place/Marktgemeindeamt+Gratwein-Stra%C3%9Fengel/@47.1139652,15.336397,185a,35.8y,0.77t/data=!3m1!1e3!4m5!3m4!1s0x476e33e85f516fcf:0x6133d9c7bfa694e4!8m2!3d47.1138652!4d15.336368?shorturl=1"
-                    className="lab-btn mr-2"
-                  >
-                    Auf Google Maps öffnen
-                  </a>
-                </Card.Body>
-              </Card>
-
-              <Card
-                style={{ alignItems: "center", height: "300px" }}
-                className="mr-3 mb-3 timmerpos"
-              >
-                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                <Card.Body style={{ textAlign: "center" }}>
-                  <Card.Title className="timmerrot">BILLA Peggau</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">-</Card.Subtitle>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Grazer Str. 32, 8120 Peggau
-                  </Card.Subtitle>
-                  <Card.Text className="timmerrot">
-                    Öffnungszeiten
-                    <br />
-                    08.12. - 23.12. 10:00 - 17:00
-                    <br />-
-                  </Card.Text>
-                  <a
-                    href="https://www.google.at/maps/place/BILLA/@47.2019274,15.3425302,468m/data=!3m2!1e3!4b1!4m5!3m4!1s0x476e307ce19e61bf:0x87006dbc6a98ebd9!8m2!3d47.2019175!4d15.3448182?shorturl=1"
-                    className="lab-btn mr-2"
-                  >
-                    Auf Google Maps öffnen
-                  </a>
-                </Card.Body>
-              </Card>
-
-              <Card
-                style={{ alignItems: "center", height: "300px" }}
-                className="mr-3 mb-3 timmerpos"
-              >
-                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                <Card.Body style={{ textAlign: "center" }}>
-                  <Card.Title className="timmerrot">Center West</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Eingang Sports Direct
-                  </Card.Subtitle>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Weblinger Gürtel 25, 8054 Graz
-                  </Card.Subtitle>
-                  <Card.Text className="timmerrot">
-                    Öffnungszeiten
-                    <br />
-                    14.12. – 23.12 09:00 – 17:00 Uhr
-                    <br />
-                    24.12. 09:00 – 12:00 Uhr
-                  </Card.Text>
-                  <a
-                    href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x476fcaacb81cf21d:0xa400ccc9b18537f8?source=g.page.share"
-                    className="lab-btn mr-2"
-                  >
-                    Auf Google Maps öffnen
-                  </a>
-                </Card.Body>
-              </Card>
-
-              <Card
-                style={{ alignItems: "center", height: "300px" }}
-                className="mr-3 mb-3 timmerpos"
-              >
-                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                <Card.Body style={{ textAlign: "center" }}>
-                  <Card.Title className="timmerrot">
-                    BILLA Plus Eggenberg
-                  </Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">-</Card.Subtitle>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Gaswerkstraße 2, 8020 Graz
-                  </Card.Subtitle>
-                  <Card.Text className="timmerrot">
-                    Öffnungszeiten
-                    <br />
-                    14.12. – 23.12 09:00 – 17:00 Uhr
-                    <br />
-                    24.12. 09:00 – 12:00 Uhr
-                  </Card.Text>
-                  <a
-                    href="https://www.google.com/maps/place/BILLA+PLUS/@47.0690169,15.4009917,17z/data=!4m6!3m5!1s0x476e35059bb7941b:0x395876236c02f116!8m2!3d47.0700616!4d15.4030723!15sChRiaWxsYSBwbHVzIGVnZ2VuYmVyZyIDiAEBWhYiFGJpbGxhIHBsdXMgZWdnZW5iZXJnkgELc3VwZXJtYXJrZXSaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUkxOV0ZxVjNwQlJSQUI?shorturl=1"
-                    className="lab-btn mr-2"
-                  >
-                    Auf Google Maps öffnen
-                  </a>
-                </Card.Body>
-              </Card>
-
-              <Card
-                style={{ alignItems: "center", height: "300px" }}
-                className="mr-3 mb-3 timmerpos"
-              >
-                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                <Card.Body style={{ textAlign: "center" }}>
-                  <Card.Title className="timmerrot">Rosseger Kai</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Bereich Gesundheitskasse
-                  </Card.Subtitle>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Roseggerkai, 8010 Graz
-                  </Card.Subtitle>
-                  <Card.Text className="timmerrot">
-                    Öffnungszeiten
-                    <br />
-                    14.12. – 23.12 09:00 – 17:00 Uhr
-                    <br />
-                    24.12. 09:00 – 12:00 Uhr
-                  </Card.Text>
-                  <a
-                    href="https://www.google.com/maps/place/Roseggerkai,+8010+Graz/@47.0648405,15.4346364,259m/data=!3m1!1e3!4m5!3m4!1s0x476e357b8f10ecbf:0x185bb17b39811570!8m2!3d47.0655155!4d15.4355833?shorturl=1"
-                    className="lab-btn mr-2"
-                  >
-                    Auf Google Maps öffnen
-                  </a>
-                </Card.Body>
-              </Card>
-
-              <Card
-                style={{ alignItems: "center", height: "300px" }}
-                className="mr-3 mb-3 timmerpos"
-              >
-                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                <Card.Body style={{ textAlign: "center" }}>
-                  <Card.Title className="timmerrot">
-                    Erzherzog Johann Alle
-                  </Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Vis a vis Cafe Promenade
-                  </Card.Subtitle>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Erzherzog-Johann-Allee 1, 8010 Graz
-                  </Card.Subtitle>
-                  <Card.Text className="timmerrot">
-                    Öffnungszeiten
-                    <br />
-                    14.12. – 23.12 09:00 – 17:00 Uhr
-                    <br />
-                    24.12. 09:00 – 12:00 Uhr
-                  </Card.Text>
-                  <a
-                    href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x476e3580488c88c5:0x3b9d51b70db745ea?source=g.page.share"
-                    className="lab-btn mr-2"
-                  >
-                    Auf Google Maps öffnen
-                  </a>
-                </Card.Body>
-              </Card>
             </div>
+           
+              
+              
+                <div id="stand" className="row align-items-center justify-content-center position-relative z-index-1">
+                <Card style={{ alignItems: 'center', height:"28rem"}} className="mr-3 mb-3 timmerpos">
+                  {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                  <Card.Body style={{ textAlign: 'center'}}>
+                    <Card.Title className="timmerrot">Ab Hof Schirning</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">vulgo Wiesenseppl</Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted">Schirning 70, 8112 Gratwein Straßengel
+                    </Card.Subtitle>
+                    <Card.Text className="timmerrot">
+                      Öffnungszeiten<br/>
+                      08.12. - 23.12. 10:00 - 17:00
+                      <br/>- 
+                    </Card.Text>
+                    <a href="https://www.google.at/maps/place/Schirning+70a,+8112+Eisbach/@47.1066429,15.289765,113m/data=!3m1!1e3!4m5!3m4!1s0x476e324f327630d5:0x9135d1918d555a83!8m2!3d47.1067099!4d15.2899719" className="lab-btn mr-2">Auf Google Maps öffnen</a>
+                  </Card.Body>
+                </Card>
+
+                <Card style={{ alignItems: 'center', height:"28rem" }} className="mr-3 mb-3 timmerpos">
+                  {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                  <Card.Body style={{ textAlign: 'center'}}>
+                    <Card.Title className="timmerrot">Hauptplatz Judendorf</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Vis a vis Gemeindeamt</Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted">Hauptplatz 1, 8111 Gratwein Straßengel
+                    </Card.Subtitle>
+                    <Card.Text className="timmerrot">
+                      Öffnungszeiten<br/>
+                      14.12. – 23.12 09:00 – 17:00 Uhr
+                      <br/>24.12. 09:00 – 12:00 Uhr 
+                    </Card.Text>
+                    <a href="https://www.google.at/maps/place/Marktgemeindeamt+Gratwein-Stra%C3%9Fengel/@47.1139652,15.336397,185a,35.8y,0.77t/data=!3m1!1e3!4m5!3m4!1s0x476e33e85f516fcf:0x6133d9c7bfa694e4!8m2!3d47.1138652!4d15.336368?shorturl=1" className="lab-btn mr-2">Auf Google Maps öffnen</a>
+                  </Card.Body>
+                </Card>
+
+                <Card style={{ alignItems: 'center', height:"28rem"  }} className="mr-3 mb-3 timmerpos">
+                  {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                  <Card.Body style={{ textAlign: 'center'}}>
+                    <Card.Title className="timmerrot">BILLA Peggau</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">-</Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted">Grazer Str. 32, 8120 Peggau
+
+                    </Card.Subtitle>
+                    <Card.Text className="timmerrot">
+                      Öffnungszeiten<br/>
+                      08.12. - 23.12. 10:00 - 17:00
+                      <br/>-
+                    </Card.Text>
+                    <a href="https://www.google.at/maps/place/BILLA/@47.2019274,15.3425302,468m/data=!3m2!1e3!4b1!4m5!3m4!1s0x476e307ce19e61bf:0x87006dbc6a98ebd9!8m2!3d47.2019175!4d15.3448182?shorturl=1" className="lab-btn mr-2">Auf Google Maps öffnen</a>
+                  </Card.Body>
+                </Card>
+
+                <Card style={{ alignItems: 'center', height:"28rem"  }} className="mr-3 mb-3 timmerpos">
+                  {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                  <Card.Body style={{ textAlign: 'center'}}>
+                    <Card.Title className="timmerrot">Center West</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Eingang Sports Direct
+                    </Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted">Weblinger Gürtel 25, 8054 Graz
+                    </Card.Subtitle>
+                    <Card.Text className="timmerrot">
+                      Öffnungszeiten<br/>
+                      14.12. – 23.12 09:00 – 17:00 Uhr
+                      <br/>24.12. 09:00 – 12:00 Uhr 
+                    </Card.Text>
+                    <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x476fcaacb81cf21d:0xa400ccc9b18537f8?source=g.page.share" className="lab-btn mr-2">Auf Google Maps öffnen</a>
+                  </Card.Body>
+                </Card>
+
+                <Card style={{ alignItems: 'center', height:"28rem"  }} className="mr-3 mb-3 timmerpos">
+                  {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                  <Card.Body style={{ textAlign: 'center'}}>
+                    <Card.Title className="timmerrot">BILLA Plus Eggenberg
+                    </Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">-
+                    </Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted">Gaswerkstraße 2, 8020 Graz
+                    </Card.Subtitle>
+                    <Card.Text className="timmerrot">
+                      Öffnungszeiten<br/>
+                      14.12. – 23.12 09:00 – 17:00 Uhr
+                      <br/>24.12. 09:00 – 12:00 Uhr 
+                    </Card.Text>
+                    <a href="https://www.google.com/maps/place/BILLA+PLUS/@47.0690169,15.4009917,17z/data=!4m6!3m5!1s0x476e35059bb7941b:0x395876236c02f116!8m2!3d47.0700616!4d15.4030723!15sChRiaWxsYSBwbHVzIGVnZ2VuYmVyZyIDiAEBWhYiFGJpbGxhIHBsdXMgZWdnZW5iZXJnkgELc3VwZXJtYXJrZXSaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUkxOV0ZxVjNwQlJSQUI?shorturl=1" className="lab-btn mr-2">Auf Google Maps öffnen</a>
+                  </Card.Body>
+                </Card>
+
+                <Card style={{ alignItems: 'center', height:"28rem"  }} className="mr-3 mb-3 timmerpos">
+                  {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                  <Card.Body style={{ textAlign: 'center'}}>
+                    <Card.Title className="timmerrot">Rosseger Kai
+                    </Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Bereich Gesundheitskasse
+                    </Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted">Roseggerkai, 8010 Graz
+                    </Card.Subtitle>
+                    <Card.Text className="timmerrot">
+                      Öffnungszeiten<br/>
+                      14.12. – 23.12 09:00 – 17:00 Uhr
+                      <br/>24.12. 09:00 – 12:00 Uhr 
+                    </Card.Text>
+                    <a href="https://www.google.com/maps/place/Roseggerkai,+8010+Graz/@47.0648405,15.4346364,259m/data=!3m1!1e3!4m5!3m4!1s0x476e357b8f10ecbf:0x185bb17b39811570!8m2!3d47.0655155!4d15.4355833?shorturl=1" className="lab-btn mr-2">Auf Google Maps öffnen</a>
+                  </Card.Body>
+                </Card>
+
+                <Card style={{ alignItems: 'center', height:"28rem"  }} className="mr-3 mb-3 timmerpos">
+                  {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                  <Card.Body style={{ textAlign: 'center'}}>
+                    <Card.Title className="timmerrot">Erzherzog Johann Alle
+                    </Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Vis a vis Cafe Promenade
+                    </Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted">Erzherzog-Johann-Allee 1, 8010 Graz
+                    </Card.Subtitle>
+                    <Card.Text className="timmerrot">
+                      Öffnungszeiten<br/>
+                      14.12. – 23.12 09:00 – 17:00 Uhr
+                      <br/>24.12. 09:00 – 12:00 Uhr 
+
+                    </Card.Text>
+                    <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x476e3580488c88c5:0x3b9d51b70db745ea?source=g.page.share" className="lab-btn mr-2">Auf Google Maps öffnen</a>
+                  </Card.Body>
+                </Card>
+
           </div>
         </div>
       </div>

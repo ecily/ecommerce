@@ -12,7 +12,7 @@ const OrderSuccess = ({ history }) => {
     api.get(`/api/v1/checkout-session?id=${id}`).then((response) => {
       setTimeout(() => history.push("/"), 5000);
     });
-  }, []);
+  }, [history]);
 
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
