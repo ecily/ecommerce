@@ -1,0 +1,51 @@
+[
+    {
+        "title": "Ab Hof Schirning",
+        "subTitle": "vulgo Wiesenseppl",
+        "address": "Schirning 70, 8112 Gratwein Straßengel",
+        "time": "08.12. - 23.12. 10:00 - 17:00 Uhr",
+        "googleLink": "https://www.google.at/maps/place/Schirning+70a,+8112+Eisbach/@47.1066429,15.289765,113m/data=!3m1!1e3!4m5!3m4!1s0x476e324f327630d5:0x9135d1918d555a83!8m2!3d47.1067099!4d15.2899719"
+    },
+    {
+        "title": "Hauptplatz Judendorf",
+        "subTitle": "Vis a vis Gemeindeamt",
+        "address": "Hauptplatz 1, 8111 Gratwein Straßengel",
+        "time": "14.12. – 23.12 09:00 – 17:00 Uhr",
+        "googleLink": "https://www.google.at/maps/place/Marktgemeindeamt+Gratwein-Stra%C3%9Fengel/@47.1139652,15.336397,185a,35.8y,0.77t/data=!3m1!1e3!4m5!3m4!1s0x476e33e85f516fcf:0x6133d9c7bfa694e4!8m2!3d47.1138652!4d15.336368?shorturl=1"
+    },
+    {
+        "title": "BILLA Peggau",
+        "subTitle": "",
+        "address": "Grazer Str. 32, 8120 Peggau",
+        "time": "08.12. - 23.12. 10:00 - 17:00 Uhr",
+        "googleLink": "https://www.google.at/maps/place/BILLA/@47.2019274,15.3425302,468m/data=!3m2!1e3!4b1!4m5!3m4!1s0x476e307ce19e61bf:0x87006dbc6a98ebd9!8m2!3d47.2019175!4d15.3448182?shorturl=1"
+    },
+    {
+        "title": "Center West",
+        "subTitle": "Eingang Sports Direct",
+        "address": "Weblinger Gürtel 25, 8054 Graz",
+        "time": "14.12. – 23.12 09:00 – 17:00 Uhr \n 24.12. 09:00 – 12:00 Uhr",
+        "googleLink": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x476fcaacb81cf21d:0xa400ccc9b18537f8?source=g.page.share"
+    },
+    {
+        "title": "BILLA Plus Eggenberg",
+        "subTitle": "",
+        "address": "Gaswerkstraße 2, 8020 Graz",
+        "time": "14.12. – 23.12 09:00 – 17:00 Uhr \n 24.12. 09:00 – 12:00 Uhr",
+        "googleLink": "https://www.google.com/maps/place/BILLA+PLUS/@47.0690169,15.4009917,17z/data=!4m6!3m5!1s0x476e35059bb7941b:0x395876236c02f116!8m2!3d47.0700616!4d15.4030723!15sChRiaWxsYSBwbHVzIGVnZ2VuYmVyZyIDiAEBWhYiFGJpbGxhIHBsdXMgZWdnZW5iZXJnkgELc3VwZXJtYXJrZXSaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUkxOV0ZxVjNwQlJSQUI?shorturl=1"
+    },
+    {
+        "title": "Rosseger Kai",
+        "subTitle": "Bereich Gesundheitskasse",
+        "address": "Roseggerkai, 8010 Graz",
+        "time": "14.12. – 23.12 09:00 – 17:00 Uhr \n 24.12. 09:00 – 12:00 Uhr",
+        "googleLink": "https://www.google.com/maps/place/Roseggerkai,+8010+Graz/@47.0648405,15.4346364,259m/data=!3m1!1e3!4m5!3m4!1s0x476e357b8f10ecbf:0x185bb17b39811570!8m2!3d47.0655155!4d15.4355833?shorturl=1"
+    },
+    {
+        "title": "Erzherzog Johann Allee",
+        "subTitle": "Vis a vis Cafe Promenade",
+        "address": "Erzherzog-Johann-Allee 1, 8010 Graz",
+        "time": "14.12. – 23.12 09:00 – 17:00 Uhr \n 24.12. 09:00 – 12:00 Uhr",
+        "googleLink": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x476e3580488c88c5:0x3b9d51b70db745ea?source=g.page.share"
+    }
+]

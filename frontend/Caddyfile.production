@@ -1,4 +1,4 @@
-www.christbaum-timmer.at:443 {
+https://www.christbaum-timmer.at, https://christbaum-timmer.at {
     tls andreas.franz@ecily.com
     root * /srv
     route {

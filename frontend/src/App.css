@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: 'Amazon Ember';
+  font-family: "Amazon Ember";
   width: 100%;
   height: 100%;
   margin: 0px;
@@ -28,13 +28,10 @@ body {
 }
 
 nav {
-  
   padding: 1rem 1rem;
   width: 100%;
   background: #ac101a;
 }
-
-
 
 .input-group {
   width: 90%;
@@ -55,8 +52,7 @@ nav {
 
 #cart {
   font-size: 1.4rem;
-  color: #14cc3c;
-  
+  color: #008134;
 }
 
 #cart_count {
@@ -115,14 +111,29 @@ nav {
   margin-left: 0.5rem;
 }
 
+/* AGB */
+.agb-modal-window > .modal-dialog {
+  max-width: 900px;
+  text-align: justify;
+  margin: 0 auto;
+}
+
 /* Footer */
 footer {
-  margin-top: 8rem;
   color: grey;
   bottom: 0;
   width: 100%;
 }
 
+.footer-img-container,
+.top-img-container {
+  width: 100%;
+}
+
+.footer-img,
+.top-img {
+  width: inherit;
+}
 /* Ratings */
 
 .rating-outer {
@@ -133,7 +144,7 @@ footer {
 }
 
 .rating-outer::before {
-  content: '\f006 \f006 \f006 \f006 \f006';
+  content: "\f006 \f006 \f006 \f006 \f006";
 }
 
 .rating-inner {
@@ -146,7 +157,7 @@ footer {
 }
 
 .rating-inner::before {
-  content: '\f005 \f005 \f005 \f005 \f005';
+  content: "\f005 \f005 \f005 \f005 \f005";
   color: #f8ce0b;
 }
 
@@ -203,7 +214,7 @@ footer {
   padding-left: 0;
 }
 .loader:after {
-  content: ' ';
+  content: " ";
   display: block;
   width: 64px;
   height: 64px;
@@ -234,17 +245,34 @@ footer {
 }
 
 #delete_cart_item {
-  color: red;
+  color: #bd1914;
   background: white;
   padding: 0.3rem 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   border: none;
+  line-height: inherit;
 }
 
 #card_item_price {
-  color: #febd69;
+  color: #008134;
   font-weight: bold;
   font-size: 1.4rem;
+}
+.main-btn {
+  color: white;
+  background: #bd1914;
+  border: 1px solid #bd1914;
+}
+
+.main-btn:hover {
+  color: #bd1914;
+  background-color: white;
+  text-decoration: none;
+  border: 1px solid #bd1914;
+}
+
+.main-btn:hover > span {
+  color: #bd1914;
 }
 
 #checkout_btn,
@@ -534,11 +562,11 @@ footer {
 }
 
 #sidebar ul li.active > a,
-a[aria-expanded='true'] {
+a[aria-expanded="true"] {
   color: #fff;
   background: #232f3e;
 }
-a[data-toggle='collapse'] {
+a[data-toggle="collapse"] {
   position: relative;
 }
 .dropdown-toggle::after {
@@ -617,8 +645,6 @@ ul.CTAs a {
   color: grey;
 }
 
-
-
 /* TIMMER */
 .qr {
   height: 200px;
@@ -639,10 +665,11 @@ ul.CTAs a {
   background-color: #ac101e;
 }
 .timmergruen {
-background-color: #14cc3c;
+  background-color: #008134;
 }
 .timmerpic {
   height: 250px;
+  border-radius: 10px;
 }
 
 .timmerpos {
@@ -653,4 +680,38 @@ background-color: #14cc3c;
   padding-right: 5px;
   padding-left: 5px;
   display: flex;
+}
+
+.sales-places-card {
+  white-space: pre-line;
+  vertical-align: bottom;
+}
+
+.sales-places-btn {
+  border: 1px solid #bd0015;
+}
+
+.sales-places-btn:hover {
+  background-color: white;
+  color: #bd0015;
+  box-shadow: 0 5px 5px rgb(24 24 24 / 20%);
+}
+
+/* Product */
+.product-card-container:first {
+}
+.product-card-container {
+  margin-top: 20px;
+}
+.product-card {
+  border: 1px solid #bd1914;
+  border-radius: 20px 80px 40px;
+}
+.product-card-inner {
+  background-color: none;
+  border-radius: 20px 80px 40px;
+}
+
+.product-card-inner:hover {
+  cursor: pointer;
 }

@@ -199,7 +199,7 @@ const Cart = ({ history }) => {
                   </p>
 
                   <hr />
-                  <Button className="lab-btn" onClick={handleCheckout}>
+                  <Button className="lab-btn main-btn" onClick={handleCheckout}>
                     Bezahlen
                   </Button>
                 </div>
