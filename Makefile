@@ -40,6 +40,10 @@ SSH_STRING:=root@161.35.28.164
 ssh:
 	ssh $(SSH_STRING)
 
+clean-up:
+	rm -rf frontend/node_modules
+	rm -rf backend/node_modules
+
 copy-files:
 	scp -r ./* $(SSH_STRING):/root/
 
