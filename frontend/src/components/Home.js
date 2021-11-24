@@ -245,7 +245,9 @@ const Home = ({ match }) => {
                 >
                   <img src="/images/logo/Wiesenseppl.png" alt="ChampEvent" />
                 </div>
-                <p className="mb-3 mt-3 text-white">Kontaktadresse</p>
+                
+                <p className="mb-3 mt-3 text-white">Willibald Timmer <br/>Schirning 70, 8112 Gratwein Straßengel</p>
+                
                 <div>
                   <p className="mb-0 text-white">
                     <Agb />
