@@ -58,7 +58,7 @@ const Home = ({ match }) => {
                 <p className="banner-desc text-white mb-5">
                   Besuchen Sie uns auf einem unserer vielen Verkaufsständen in
                   Graz und Umgebung. Stressfrei und kontaktlos können Sie ihren
-                  Christbaum ab diesem Jahr auch online bestellen.
+                  Christbaum ab diesem Jahr bis inkl. 20. Dezember auch online bestellen.
                 </p>
                 {/* <div className="banner-button-group d-inline-flex"> */}
                 <div className="mb-5">
@@ -246,7 +246,7 @@ const Home = ({ match }) => {
                   <img src="/images/logo/Wiesenseppl.png" alt="ChampEvent" />
                 </div>
                 
-                <p className="mb-3 mt-3 text-white">Willibald Timmer <br/>Schirning 70, 8112 Gratwein Straßengel</p>
+                <p className="mb-3 mt-3 text-white">Willibald Timmer <br/>Schirning 70, 8112 Gratwein Straßengel<br/>Mobil: 0664 512 93 23</p>
                 
                 <div>
                   <p className="mb-0 text-white">
