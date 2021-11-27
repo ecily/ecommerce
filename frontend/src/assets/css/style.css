@@ -487,12 +487,11 @@ body {
 }
 body h1,
 body h2,
-
+body h3,
 body h4,
 body h5,
 body h6 {
   color: #181818;
-  text-transform: capitalize;
   -webkit-transition: 0.3s all linear;
   -moz-transition: 0.3s all linear;
   transition: 0.3s all linear;
