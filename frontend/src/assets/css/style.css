@@ -492,7 +492,6 @@ body h4,
 body h5,
 body h6 {
   color: #181818;
-  text-transform: capitalize;
   -webkit-transition: 0.3s all linear;
   -moz-transition: 0.3s all linear;
   transition: 0.3s all linear;
@@ -2506,7 +2505,7 @@ header .section-wrapper .menu-wrapper ul.main-menu > li a {
   padding: 10px;
   color: #fff;
   font-weight: 700;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 @media (max-width: 991px) {
   header .section-wrapper .menu-wrapper ul.main-menu > li a {
@@ -2703,7 +2702,7 @@ header
   a {
   color: #000;
   padding: 0;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 header
   .section-wrapper
@@ -2950,7 +2949,7 @@ header .header-bar.show span:last-child {
   font-size: 16px;
   font-weight: 400;
   color: #fff;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 .lab-btn:hover {
   -webkit-transform: translateY(-2px);
@@ -3276,9 +3275,9 @@ header .header-bar.show span:last-child {
 .ticket-area .ticket-left .ticket-content .ticket-countdown li h2 {
   color: #ac101e;
 }
-.ticket-area .ticket-left .ticket-content .ticket-countdown li p {
-  text-transform: capitalize;
-}
+/*.ticket-area .ticket-left .ticket-content .ticket-countdown li p {
+   text-transform: capitalize; 
+}*/
 .newslater-section .newslater-title {
   font-family: "Fredoka One", cursive;
 }
@@ -3308,7 +3307,7 @@ header .header-bar.show span:last-child {
   color: #fff;
   font-weight: 700;
   background: #ac101e;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   font-size: 14px;
   border: none;
 }
@@ -4785,7 +4784,7 @@ header .header-bar.show span:last-child {
   background-color: #ac101e;
   font-weight: 700;
   color: #fff;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   margin-bottom: 0;
 }
 
@@ -5675,7 +5674,7 @@ aside .widget.widget-tags ul.widget-wrapper li a:hover {
   color: #fff;
   padding: 18px;
   border: none;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 @media (max-width: 575px) {
   .shop-cart .section-wrapper .cart-top table thead tr th {
@@ -5761,7 +5760,7 @@ aside .widget.widget-tags ul.widget-wrapper li a:hover {
   -webkit-transition: 0.3s all linear;
   -moz-transition: 0.3s all linear;
   transition: 0.3s all linear;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 @media (max-width: 767px) {
   .shop-cart .section-wrapper .cart-top table tbody tr td.cat-toprice,
