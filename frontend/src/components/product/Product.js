@@ -17,9 +17,9 @@ const Product = ({ product, col }) => {
               <div className="pricing-content">
                 <h3 className="pricing-title mb-3">{product.name}</h3>
 
-                <h3 className="pricing-price mb-2" style={{ fontSize: "1rem" }}>
+                {/* <h3 className="pricing-price mb-2" style={{ fontSize: "1rem" }}>
                   {product.description}
-                </h3>
+                </h3> */}
                 <h3 className="pricing-price mb-2" style={{ fontSize: "1rem" }}>
                   € {product.price}
                 </h3>
