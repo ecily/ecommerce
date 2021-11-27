@@ -162,7 +162,7 @@ const Cart = ({ history }) => {
                       {cartItems
                         .reduce(
                           (acc, item) =>
-                            (acc + item.quantity * item.price) * 0.87,
+                            (acc + item.quantity * item.price) / 1.13,
                           0
                         )
                         .toFixed(2)}
@@ -172,13 +172,21 @@ const Cart = ({ history }) => {
                     Gesamt (13% MWST):{" "}
                     <span className="order-summary-values">
                       €{" "}
-                      {cartItems
-                        .reduce(
-                          (acc, item) =>
-                            (acc + item.quantity * item.price) * 0.13,
-                          0
-                        )
-                        .toFixed(2)}
+                      {(
+                        cartItems
+                          .reduce(
+                            (acc, item) => acc + item.quantity * item.price,
+                            0
+                          )
+                          .toFixed(2) -
+                        cartItems
+                          .reduce(
+                            (acc, item) =>
+                              (acc + item.quantity * item.price) / 1.13,
+                            0
+                          )
+                          .toFixed(2)
+                      ).toFixed(2)}
                     </span>
                   </p>
                   <p>
