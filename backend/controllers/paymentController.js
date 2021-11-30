@@ -10,6 +10,7 @@ exports.createCheckoutSession = catchAsyncErrors(async (req, res, next) => {
   const lineItems = cartItems.map((i) => ({
     price: i.priceId,
     quantity: i.quantity,
+    tax_rates: ["txr_1K0RYKE2p1T8LG1hX0w5FFiK"],
     description: i.product,
   }));
 
@@ -18,6 +19,9 @@ exports.createCheckoutSession = catchAsyncErrors(async (req, res, next) => {
     billing_address_collection: "auto",
     shipping_address_collection: {
       allowed_countries: ["AT"],
+    },
+    automatic_tax: {
+      enabled: false,
     },
     phone_number_collection: {
       enabled: true,
@@ -31,6 +35,8 @@ exports.createCheckoutSession = catchAsyncErrors(async (req, res, next) => {
             currency: "eur",
           },
           display_name: "Gratis Versand",
+          tax_behavior: "inclusive",
+          tax_code: "txcd_00000000",
           delivery_estimate: {
             minimum: {
               unit: "business_day",
@@ -44,7 +50,7 @@ exports.createCheckoutSession = catchAsyncErrors(async (req, res, next) => {
         },
       },
     ],
-    payment_method_types: ["card", "eps", "sofort", "klarna"],
+    payment_method_types: ["card", "eps", "sofort"],
     mode: "payment",
     success_url:
       process.env.NODE_ENV === "DEVELOPMENT"
