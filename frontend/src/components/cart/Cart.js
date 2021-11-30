@@ -169,7 +169,7 @@ const Cart = ({ history }) => {
                     </span>
                   </p>
                   <p>
-                    Gesamt (13% MWST):{" "}
+                    MWST(13%):{" "}
                     <span className="order-summary-values">
                       €{" "}
                       {(

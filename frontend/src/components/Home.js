@@ -58,7 +58,7 @@ const Home = ({ match }) => {
                 <p className="banner-desc text-white mb-5">
                   Besuchen Sie uns auf einem unserer vielen Verkaufsständen in
                   Graz und Umgebung. Stressfrei und kontaktlos können Sie ihren
-                  Christbaum ab diesem Jahr bis inkl. 20. Dezember auch online bestellen.
+                  Christbaum bis inkl. 20. Dezember auch online bestellen.
                 </p>
                 {/* <div className="banner-button-group d-inline-flex"> */}
                 <div className="mb-5">
@@ -81,7 +81,7 @@ const Home = ({ match }) => {
             data-wow-delay="0.4s"
           >
             <h2 className="banner-title timmerrot">
-              8. Dezember - Start Christbaumverkauf
+              Auch im Lockdown! Start Ab Hof Verkauf am 8. Dezember!
             </h2>
             <p>
               Wie jedes Jahr eröffnen wir unseren Christbaumverkauf am 08.
