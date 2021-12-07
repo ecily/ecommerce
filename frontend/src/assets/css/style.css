@@ -2885,14 +2885,14 @@ header .header-bar.show span:last-child {
   }
 }
 .banner-content .banner-title {
-  font-size: calc(1.5375rem + 3.45vw);
+  font-size: calc(1.5375rem + 2.45vw);
   font-family: "Fredoka One", cursive;
   color: #008134;
   -webkit-text-stroke: 2px white;
 }
 @media (min-width: 1200px) {
   .banner-content .banner-title {
-    font-size: 4.125rem;
+    font-size: 3.125rem;
   }
 }
 .banner-thumb img {
