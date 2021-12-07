@@ -10,18 +10,18 @@ export default function SalesPlaceCard({ place }) {
         <Card.Title className="timmerrot">{title}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{subTitle}</Card.Subtitle>
         <Card.Subtitle className="mb-2 text-muted">{address}</Card.Subtitle>
-        <Card.Text className="timmerrot">
+        <Card.Subtitle className="mb-2 timmerrot">
           Öffnungszeiten
           <br />
           {time}
-        </Card.Text>
+        </Card.Subtitle>
         <a
           target="_blank"
           rel="noreferrer"
           href={googleLink}
           className="lab-btn mr-2 sales-places-btn"
         >
-          Auf Google Maps öffnen
+          Google Maps
         </a>
       </Card.Body>
     </Card>

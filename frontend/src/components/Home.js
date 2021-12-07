@@ -52,13 +52,12 @@ const Home = ({ match }) => {
                 </span>
                 <h2 className="banner-title">Christbaumhandel Timmer</h2>
                 <p className="banner-sub-title text-white">
-                  Bei uns finden Sie den perfekten Christbaum für Ihr
-                  Weihnachtsfest.
+                Wir haben die perfekte Nordmanntanne für Ihr Weihnachtsfest!
                 </p>
                 <p className="banner-desc text-white mb-5">
-                  Besuchen Sie uns auf einem unserer vielen Verkaufsständen in
-                  Graz und Umgebung. Stressfrei und kontaktlos können Sie ihren
-                  Christbaum bis inkl. 20. Dezember auch online bestellen.
+                Wir freuen uns auf Ihren Besuch an einem unserer vielen Verkaufsstände in
+                Graz und Umgebung. Bis einschließlich 20. Dezember können Sie Ihren
+                Christbaum jetzt auch online bestellen. 
                 </p>
                 {/* <div className="banner-button-group d-inline-flex"> */}
                 <div className="mb-5">
@@ -81,7 +80,7 @@ const Home = ({ match }) => {
             data-wow-delay="0.4s"
           >
             <h2 className="banner-title timmerrot">
-              Auch im Lockdown! Start Ab Hof Verkauf am 8. Dezember!
+            Auch im Lockdown: Der Ab-Hof-Verkauf startet am 08. Dezember!
             </h2>
             <p>
               Wie jedes Jahr eröffnen wir unseren Christbaumverkauf am 08.
@@ -93,12 +92,12 @@ const Home = ({ match }) => {
               Nehmen Sie den Baum gleich mit oder nutzen Sie die Möglichkeit,
               ihn kurz vor Weihnachten liefern zu lassen.
               <br />
-              Ab 14. Dezember startet der Verkauf wie gewohnt an allen unseren
-              Verkaufsständen.
+              Ab 14. Dezember startet der Verkauf wie gewohnt an allen <a href="#stand" style={{ color: "red" }}>unseren
+              Verkaufsständen</a>.
             </p>
-            <a href="#stand" className="lab-btn main-btn">
+            {/* <a href="#stand" className="lab-btn main-btn">
               <span>Unsere Verkaufsstände</span>
-            </a>
+            </a> */}
           </div>
           <div className="section-wrapper">
             <div className="justify-content-center justify-content-center g-4 mb-5 ">
@@ -125,23 +124,65 @@ const Home = ({ match }) => {
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
-                      src="/images/Timm_1.jpg?text=First slide&bg=f5f5f5"
+                      src="/images/Timmer_Slider-01.jpg?text=First slide&bg=f5f5f5"
                       alt="First slide"
                     />
                   </Carousel.Item>
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
-                      src="/images/Timm_3.jpg?text=Second slide&bg=eee"
+                      src="/images/Timmer_Slider-02.jpg?text=Second slide&bg=eee"
                       alt="Second slide"
                     />
                   </Carousel.Item>
                   <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src="/images/Timm_2.jpg?text=Third slide&bg=e5e5e5"
-                      alt="Third slide"
-                    />
+                     <img
+                        className="d-block w-100"
+                        src="/images/Timmer_Slider-03.jpg?text=Second slide&bg=eee"
+                        alt="Second slide"
+                      />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                     <img
+                        className="d-block w-100"
+                        src="/images/Timmer_Slider-04.jpg?text=Second slide&bg=eee"
+                        alt="Second slide"
+                      />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                     <img
+                        className="d-block w-100"
+                        src="/images/Timmer_Slider-05.jpg?text=Second slide&bg=eee"
+                        alt="Second slide"
+                      />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                     <img
+                        className="d-block w-100"
+                        src="/images/Timmer_Slider-06.jpg?text=Second slide&bg=eee"
+                        alt="Second slide"
+                      />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                     <img
+                        className="d-block w-100"
+                        src="/images/Timmer_Slider-07.jpg?text=Second slide&bg=eee"
+                        alt="Second slide"
+                      />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                     <img
+                        className="d-block w-100"
+                        src="/images/Timmer_Slider-08.jpg?text=Second slide&bg=eee"
+                        alt="Second slide"
+                      />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                     <img
+                        className="d-block w-100"
+                        src="/images/Timmer_Slider-09.jpg?text=Second slide&bg=eee"
+                        alt="Second slide"
+                      />
                   </Carousel.Item>
                 </Carousel>
               </div>
@@ -151,16 +192,13 @@ const Home = ({ match }) => {
                 <span className="about-subtitle">Über uns</span>
                 <h2 className="about-title">
                   <span style={{ color: "#008134" }}>
-                    Timmer's Nordmann-Tannen
+                    Über Timmer's Nordmann-Tannen
                   </span>
                 </h2>
                 <p className="about-desc">
-                  Seit 30 Jahren führen wir, Willibald und Waltraud Timmer den
-                  Christbaumhandel Timmer in zweiter Generation. Die
-                  Zufriedenheit unserer Kunden liegt uns sehr am Herzen und die
-                  Qualität unserer Nordmanntannen zeichnet uns aus. Wir freuen
-                  uns auf ihren Besuch, persönlich oder online, und wünschen
-                  Ihnen Frohe Weihnachten. Ihre Familie Timmer
+                 Waltraud und Willibald Timmer führen Ihr Unternehmen seit nunmehr 30 Jahren in zweiter Generation.
+                 Die Premium-Qualität ihrer Nordmanntannen, persönliche Beratung und der bewährte Rundum-Service haben
+                 dem Familienbetrieb Christbaumhandel Timmer Jahr für Jahr einen stetig wachsenden Kundenstamm beschert.
                 </p>
 
                 <span className="about-subtitle">
@@ -171,30 +209,22 @@ const Home = ({ match }) => {
 
                 <ul>
                   <li className="mb-3">
-                    Kühlen Sie Ihren Christbaum bis zum Heiligen Abend so gut
-                    wie möglich!
+                    Nordmanntannen sollten bis zu ihrem Aufputz kühl gelagert sein!
                   </li>
                   <li className="mb-3">
-                    Achten Sie auf Ihre Raumtemperatur – Je kühler, desto länger
-                    bleibt Ihr Baum frisch!
+                    Je niedriger die Raumtemperatur, desto länger ist ihre Haltbarkeit.
                   </li>
                   <li className="mb-3">
-                    Entfernen Sie das Verpackungsnetz von unten nach oben!
+                    Das Verpackungsnetz ist von unten nach oben abzuziehen!
                   </li>
                   <li className="mb-3">
-                    Anschließend stellen Sie Ihren Naturbaum in einen konischen
-                    Wasserständer und achten regelmäßig auf ausreichende
-                    Wasserzufuhr!
+                    Idealerweise steht der Baum in einem konischen Wasserbehälter.
                   </li>
                   <li className="mb-3">
-                    Ihr Baum benötigt zwischen zwei bis vier Liter
-                    Leitungswasser pro Tag. Sorgen Sie stets für einen
-                    konstanten Wasserstand!
+                    Nordmanntannen haben einen Wasserbedarf von zwei bis drei Litern pro Tag: dieser Richtpegel sollte nicht unterschritten werden!
                   </li>
                   <li className="mb-3">
-                    Als zusätzlichen Frische-Tipp empfehlen wir einen
-                    Wasserspray, um die Nadeln einzusprühen und somit feucht und
-                    länger frisch zu halten.
+                    Stetes Wassersprühen hält des Nordmanns Tanne frisch und grün ...
                   </li>
                   <img
                     className="qr"
