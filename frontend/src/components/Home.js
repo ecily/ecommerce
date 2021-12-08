@@ -92,7 +92,7 @@ const Home = ({ match }) => {
               Nehmen Sie den Baum gleich mit oder nutzen Sie die Möglichkeit,
               ihn kurz vor Weihnachten liefern zu lassen.
               <br />
-              Ab 14. Dezember startet der Verkauf wie gewohnt an allen <a href="#stand" style={{ color: "red" }}>unseren
+              Ab 10. Dezember startet der Verkauf wie gewohnt an allen <a href="#stand" style={{ color: "red" }}>unseren
               Verkaufsständen</a>.
             </p>
             {/* <a href="#stand" className="lab-btn main-btn">
