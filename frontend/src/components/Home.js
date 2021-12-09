@@ -50,7 +50,7 @@ const Home = ({ match }) => {
                 <span className="banner-sub-title text-white">
                   Herzlich Willkommen bei
                 </span>
-                <h2 className="banner-title">Christbaumhandel Timmer</h2>
+                <h2 style={{color: "#9DD692"}}>Christbaumhandel <br/> Timmer</h2>
                 <p className="banner-sub-title text-white">
                 Wir haben die perfekte Nordmanntanne für Ihr Weihnachtsfest!
                 </p>
@@ -116,94 +116,83 @@ const Home = ({ match }) => {
         <div className="container">
           <div className="row align-items-center justify-content-center position-relative z-index-1">
             <div
-              className="col-lg-6 col-12 wow fadeInLeft"
-              data-wow-delay="0.4s"
+              className="col-lg-12 col-12"
             >
-              <div className="about-thumb ml-xxl-450">
-                <Carousel variant="dark">
+              <div className="mb-4">
+                <Carousel fade={true} indicators={false}>
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
-                      src="/images/Timmer_Slider-01.jpg?text=First slide&bg=f5f5f5"
-                      alt="First slide"
+                      src="/images/Timmer_Slider-01.jpg"
                     />
                   </Carousel.Item>
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
-                      src="/images/Timmer_Slider-02.jpg?text=Second slide&bg=eee"
-                      alt="Second slide"
+                      src="/images/Timmer_Slider-02.jpg"
                     />
                   </Carousel.Item>
                   <Carousel.Item>
                      <img
                         className="d-block w-100"
-                        src="/images/Timmer_Slider-03.jpg?text=Second slide&bg=eee"
-                        alt="Second slide"
+                        src="/images/Timmer_Slider-03.jpg"
                       />
                   </Carousel.Item>
                   <Carousel.Item>
                      <img
                         className="d-block w-100"
-                        src="/images/Timmer_Slider-04.jpg?text=Second slide&bg=eee"
-                        alt="Second slide"
+                        src="/images/Timmer_Slider-04.jpg"
                       />
                   </Carousel.Item>
                   <Carousel.Item>
                      <img
                         className="d-block w-100"
-                        src="/images/Timmer_Slider-05.jpg?text=Second slide&bg=eee"
-                        alt="Second slide"
+                        src="/images/Timmer_Slider-05.jpg"
                       />
                   </Carousel.Item>
                   <Carousel.Item>
                      <img
                         className="d-block w-100"
-                        src="/images/Timmer_Slider-06.jpg?text=Second slide&bg=eee"
-                        alt="Second slide"
+                        src="/images/Timmer_Slider-06.jpg"
                       />
                   </Carousel.Item>
                   <Carousel.Item>
                      <img
                         className="d-block w-100"
-                        src="/images/Timmer_Slider-07.jpg?text=Second slide&bg=eee"
-                        alt="Second slide"
+                        src="/images/Timmer_Slider-07.jpg"
                       />
                   </Carousel.Item>
                   <Carousel.Item>
                      <img
                         className="d-block w-100"
-                        src="/images/Timmer_Slider-08.jpg?text=Second slide&bg=eee"
-                        alt="Second slide"
+                        src="/images/Timmer_Slider-08.jpg"
                       />
                   </Carousel.Item>
                   <Carousel.Item>
                      <img
                         className="d-block w-100"
-                        src="/images/Timmer_Slider-09.jpg?text=Second slide&bg=eee"
-                        alt="Second slide"
+                        src="/images/Timmer_Slider-09.jpg"
                       />
                   </Carousel.Item>
                 </Carousel>
               </div>
             </div>
-            <div className="col-lg-6 col-12 wow fadeInUp" data-wow-delay="0.4s">
+            <div className="col-lg-12 ml-4 col-12">
               <div className="about-content">
-                <span className="about-subtitle">Über uns</span>
-                <h2 className="about-title">
-                  <span style={{ color: "#008134" }}>
+                  <h2 className="about-title mt-4">
+                  <span style={{ color: "#E1D13C" }}>
                     Über Timmer's Nordmann-Tannen
                   </span>
                 </h2>
                 <p className="about-desc">
                  Waltraud und Willibald Timmer führen Ihr Unternehmen seit nunmehr 30 Jahren in zweiter Generation.
                  Die Premium-Qualität ihrer Nordmanntannen, persönliche Beratung und der bewährte Rundum-Service haben
-                 dem Familienbetrieb Christbaumhandel Timmer Jahr für Jahr einen stetig wachsenden Kundenstamm beschert.
+                 dem Familienbetrieb <span style={{ color: "#9DD692" }}>Christbaumhandel Timmer </span>Jahr für Jahr einen stetig wachsenden Kundenstamm beschert.
                 </p>
 
                 <span className="about-subtitle">
-                  <span style={{ color: "#008134" }}>
-                    Unsere nützlichen Tipps
+                  <span style={{ color: "#9DD692" }}>
+                  Frische-Tipps vom Christbaum-Profi
                   </span>
                 </span>
 
@@ -226,11 +215,11 @@ const Home = ({ match }) => {
                   <li className="mb-3">
                     Stetes Wassersprühen hält des Nordmanns Tanne frisch und grün ...
                   </li>
-                  <img
+                  {/* <img
                     className="qr"
                     src="/images/timmer_qr_final.png"
                     alt="QR code"
-                  />
+                  /> */}
                 </ul>
                 <a href="#pricing" className="lab-btn mb-5 main-btn">
                   <span>Online kaufen</span>
